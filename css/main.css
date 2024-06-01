@@ -1,9 +1,35 @@
+/* ====================================== */
+/* ==============> GENERAL <=============*/
+
 :root {
     --main-black: #1f1f1f;
     --box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
     --main-gray: #787878;
     --main-blue: #00c3da;
     --white: #fff;
+
+    --bg-color: #fff;
+    --font-default: "Inter", sans-serif;
+    --color-primary: #ce1212;
+    --color-secondary: #37373f;
+    --color-default: #212529;
+    --color-tertiary: #7f7f90;
+    --color-content: #4f4f5a;
+    --color-content-info: #7d7d7d;
+    --white: #fff;
+    --black: #000;
+    --black-toggle: #fff;
+    --light-hue: 0;
+    --light-saturation: 0%;
+    --light-lightness: 100%;
+    --color-light: hsl(var(--light-hue),
+            var(--light-saturation),
+            var(--light-lightness));
+    --border-radius: 30px 30px 30px;
+    --hover-social-color: #ffffff4d;
+    --hover-social-color-icon: #37373f66;
+    --fa-font-solid: normal 900 1em / 1 "Font Awesome 6 Free";
+    --color-primary-hover: red;
 }
 
 
@@ -18,9 +44,50 @@ body {
     font-weight: 600;
 }
 
+#about,
+#team {
+    padding-block: 2rem;
+}
 
-/* ====================================== */
-/* ===============> GENERAL <==============*/
+.text-black {
+    color: var(--main-black);
+}
+
+.box-shadow-full {
+    box-shadow: var(--box-shadow);
+}
+
+.border-gray {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.border-bluelight {
+    border-color: rgba(0, 195, 218, 0.9) !important;
+}
+
+.text-gray {
+    color: rgba(255, 255, 255, 1) !important;
+}
+
+.text-gray-bold {
+    color: var(--main-gray) !important;
+}
+
+.bg-gray {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.bg-bluelight {
+    background-color: rgba(0, 195, 218, 0.9) !important;
+}
+
+.bg-lightbrown {
+    background-color: rgba(31, 31, 31, 0.7) !important;
+}
+
+.text-bluelight {
+    color: var(--main-blue);
+}
 
 .w-35 {
     width: 35%;
@@ -45,6 +112,48 @@ body {
 .h-35 {
     height: 35%;
 }
+
+.btn-white,
+.btn-white-1,
+.btn-bluelight {
+    background-color: transparent;
+    border-color: var(--white);
+    color: var(--main-black);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 15px;
+    width: 100px;
+}
+
+.btn-bluelight {
+    background-color: var(--main-blue);
+    border-color: var(--main-blue);
+    color: var(--white);
+
+}
+
+.text-dark-hover:hover {
+    color: var(--main-black) !important;
+}
+
+.btn-white-1 {
+    color: var(--white);
+}
+
+.btn-white:hover,
+.btn-white-1:hover {
+    background-color: var(--white);
+    color: var(--main-black);
+}
+
+.btn-bluelight:hover {
+    background-image: linear-gradient(to right, rgba(0, 200, 200, 1), rgba(255, 255, 255, 0.13), rgba(0, 200, 200, 1));
+    border-color: var(--main-blue);
+    color: var(--white);
+    background-color: var(--main-blue);
+
+}
+
 
 /* ====================================== */
 /* ===============> TITLE <==============*/
@@ -76,7 +185,6 @@ body {
     text-transform: uppercase;
 }
 
-
 /* ====================================== */
 /* ===============> NAVBAR <==============*/
 #navbar>li {
@@ -93,7 +201,7 @@ body {
 }
 
 .logo-light {
-    background-image: url('../images/hero-img.png');
+    background-image: url('../images/va.bef19b03.png');
     background-repeat: no-repeat;
     background-position: 0% 100%;
     background-size: contain;
@@ -101,7 +209,7 @@ body {
 }
 
 .logo-dark {
-    background-image: url('../images/hero-img.png');
+    background-image: url('../images/va.bef19b03.png');
     background-repeat: no-repeat;
     background-position: 0% 100%;
     background-size: contain;
@@ -118,4 +226,643 @@ body:has(.services:target) li a[href="#services"],
 body:has(.pricing:target) li a[href="#pricing"],
 body:has(.team:target) li a[href="#team"] {
     color: #000;
+}
+
+
+/* ******************************************** */
+/* ===> header <=== */
+.header {
+    width: 100%;
+    padding: 15px;
+}
+
+.header__container {
+    padding: 50px 0;
+    margin: 50px auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.header__img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.header__img img {
+    width: 100%;
+    filter: drop-shadow(4px 4px 9px var(--black));
+}
+
+.header__img img:hover {
+    animation: shake 1s infinite;
+}
+
+.header__content {
+    margin: 50px auto;
+    text-align: center;
+
+    h2 {
+        font-size: 4rem;
+        margin: 0;
+        color: var(--black);
+    }
+
+    p {
+        margin: 20px;
+        font-family: var(--font-default);
+        font-size: 1rem;
+        color: var(--color-content);
+    }
+
+    .header__btns a {
+        display: inline-flex;
+        font-family: var(--font-default);
+        padding: 15px 20px;
+        margin: 10px;
+        text-decoration: none;
+    }
+
+    .main-header-btn {
+        background-color: var(--color-primary);
+        color: var(--white);
+        border-radius: var(--border-radius);
+    }
+
+    .main-header-btn:hover {
+        background-color: var(--color-primary-hover);
+    }
+
+
+    .sec-header-btn {
+        color: var(--black);
+        align-items: center;
+
+        .btn-icon {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            background-image: linear-gradient(to right, var(--color-primary) 0 50%, transparent 50% 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 0.3rem;
+        }
+
+        .btn-icon i {
+            font-size: 1rem;
+            background-color: var(--white);
+            border-radius: 50%;
+            padding: 12px;
+        }
+    }
+
+    .sec-header-btn:hover {
+        color: var(--color-primary);
+    }
+}
+
+
+
+
+
+/* ====================================== */
+/* ===============> CAROUSEL <==============*/
+.slide-arrows>button {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-left: 0;
+    color: var(--white);
+    font-size: 28px;
+    display: block;
+    transition: all .3s ease;
+}
+
+.slide-arrows>button:hover {
+    cursor: pointer;
+    color: var(--main-black);
+    border-color: var(--white);
+    background-color: var(--white);
+}
+
+.slide-arrows {
+    position: absolute;
+    left: 0;
+    bottom: 35%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.slide-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    transition: left 0.4s;
+    z-index: -1;
+}
+
+.slide-button:hover::before {
+    left: 0;
+}
+
+.slide-button:hover {
+    color: var(--white);
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    background-image: none;
+}
+
+.carousel-btn-left i::before,
+.carousel-btn-right i::before {
+    color: var(--white);
+    border: var(--white) solid 2px;
+    padding: 10px;
+    font-size: 1.5rem;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel-btn-left i::before {
+    bottom: 31%;
+}
+
+
+.hover-transition i,
+.hover-transition-next i {
+    color: var(--main-black);
+    font-size: 2rem;
+    transition: all 0.5s;
+}
+
+.hover-prev:hover i::before,
+.hover-next:hover i::before {
+    background: var(--white);
+    transition: all .5s;
+    color: var(--main-black);
+}
+
+.hover-transition:hover i {
+    transform: translateX(-10px);
+    color: var(--main-blue);
+}
+
+.hover-transition-next:hover i {
+    transform: translateX(10px);
+    color: var(--main-blue);
+}
+
+.car-indicator {
+    background-color: var(--main-blue);
+    width: 10px;
+    height: 10px;
+}
+
+.cover {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    text-align: center;
+    align-content: center;
+    color: var(--white);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.carousel-inner h1 {
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.carousel-inner p {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+
+/* ====================================== */
+/* ======> ANIMATION FOR CAROUSEL <====== */
+.cover-content h1 {
+    opacity: 0;
+    animation: zoomOut 1s forwards;
+    transition: opacity 0.1s ease-in, transform 0.4s;
+}
+
+.cover-content p {
+    opacity: 0;
+    animation: zoomOut 1s 1s forwards;
+    transition: opacity 0.1s 1s ease-in, transform 0.6;
+}
+
+.cover-content .buttons {
+    opacity: 0;
+    animation: zoomOut 1s 2s forwards;
+    transition: opacity 0.1s 2s ease-in, transform 0.8s;
+}
+
+/* ====================================== */
+/* ===============> ABOUT <==============*/
+.hidden-btn a {
+    font-size: 1rem;
+    padding: 20px 30px;
+    transition: all 0.5s;
+}
+
+.hidden-btn:hover a {
+    background-color: var(--main-black);
+    color: var(--white);
+}
+
+#about .typing::after {
+    color: var(--main-blue);
+    font-size: 24px;
+    position: relative;
+    content: '';
+    animation: text 5s infinite;
+}
+
+/* ====================================== */
+/* ================> TEAM <==============*/
+
+.card-layer h5,
+.card-layer p {
+    font-size: 1rem;
+}
+
+.card-layer {
+    color: var(--white);
+    opacity: 0;
+    transform: translateY(60%);
+    transition: all 0.1s 1ms;
+}
+
+.card-layer a {
+    color: #ffffffbb;
+}
+
+.card-layer a:hover {
+    color: var(--white);
+    font-weight: 900;
+}
+
+.team-member {
+    overflow: hidden;
+}
+
+.team-member:hover .card-layer {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ====================================== */
+/* ==============> SERVICES <============*/
+#services h5 {
+    font-size: 1rem;
+}
+
+/* ====================================== */
+/* ==============> PRICING <============*/
+.btn.btn-sm {
+    padding: 0 16px;
+    font-size: 0.8rem;
+    height: 40px;
+    line-height: 40px;
+    background-color: var(--main-blue);
+    color: var(--white);
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    background-image: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.13), transparent);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn-shadow {
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.07);
+}
+
+.btn-shadow:hover {
+    box-shadow: 5px 8px 26px rgba(255, 255, 255, 0.1);
+}
+
+#pricing.card h5 {
+    font-size: 55px;
+    font-weight: 500;
+    letter-spacing: -3px;
+    margin: 0;
+}
+
+#pricing.card h5 span {
+    font-size: 18px;
+    font-weight: 400;
+    vertical-align: top;
+}
+
+.card-header {
+    font-size: 0.8rem;
+}
+
+@media (min-width: 992px) {
+    .scaled-card {
+        transform: scale(1.1);
+    }
+}
+
+.scaled-card {
+    transition: all .3s ease;
+}
+
+/* ====================================== */
+/* ============> GET IN TOUCH <==========*/
+.form-control {
+    border-radius: 0;
+    padding: 12px;
+}
+
+.form-control:focus {
+    border-color: rgba(31, 31, 31, 1);
+    box-shadow: var(--box-shadow);
+    outline: none;
+    background-color: #fdf8e4;
+    border-radius: 0;
+}
+
+/* ====================================== */
+/* ===> ANIMATION <=== */
+@keyframes zoomOut {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes text {
+    0% {
+        content: '| ';
+    }
+
+    2% {
+        content: 'a| ';
+    }
+
+    4% {
+        content: 'ap| ';
+    }
+
+    6% {
+        content: 'app| ';
+    }
+
+    8% {
+        content: 'apps| ';
+    }
+
+    12% {
+        content: 'apps ';
+    }
+
+    14% {
+        content: 'apps| ';
+    }
+
+    18% {
+        content: 'app| ';
+    }
+
+    20% {
+        content: 'ap| ';
+    }
+
+    22% {
+        content: 'a| ';
+    }
+
+    24% {
+        content: '| ';
+    }
+
+    26% {
+        content: 'w| ';
+    }
+
+    28% {
+        content: 'we| ';
+    }
+
+    30% {
+        content: 'web| ';
+    }
+
+    32% {
+        content: 'webs| ';
+    }
+
+    34% {
+        content: 'websi| ';
+    }
+
+    36% {
+        content: 'websit| ';
+    }
+
+    38% {
+        content: 'website| ';
+    }
+
+    40% {
+        content: 'websites| ';
+    }
+
+    44% {
+        content: 'websites';
+    }
+
+    48% {
+        content: 'websites| ';
+    }
+
+    52% {
+        content: 'website| ';
+    }
+
+    54% {
+        content: 'websit| ';
+    }
+
+    56% {
+        content: 'websi| ';
+    }
+
+    58% {
+        content: 'webs| ';
+    }
+
+    60% {
+        content: 'web| ';
+    }
+
+    62% {
+        content: 'we| ';
+    }
+
+    64% {
+        content: 'w| ';
+    }
+
+    66% {
+        content: '| ';
+    }
+
+    68% {
+        content: 's| ';
+    }
+
+    70% {
+        content: 'so| ';
+    }
+
+    72% {
+        content: 'sof| ';
+    }
+
+    74% {
+        content: 'soft| ';
+    }
+
+    76% {
+        content: 'softw| ';
+    }
+
+    78% {
+        content: 'softwa| ';
+    }
+
+    80% {
+        content: 'softwar| ';
+    }
+
+    82% {
+        content: 'software| ';
+    }
+
+    82% {
+        content: 'software ';
+    }
+
+    84% {
+        content: 'software| ';
+    }
+
+    86% {
+        content: 'softwar| ';
+    }
+
+    88% {
+        content: 'softwa| ';
+    }
+
+    90% {
+        content: 'softw| ';
+    }
+
+    92% {
+        content: 'soft| ';
+    }
+
+    94% {
+        content: 'sof| ';
+    }
+
+    96% {
+        content: 'so| ';
+    }
+
+    98% {
+        content: 's| ';
+    }
+
+    100% {
+        content: '| ';
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ******************************************** */
+/* ===> Animation <=== */
+
+@keyframes shake {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(1px, 1px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(3px, 2px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(-1px, -1px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(0, 0) rotate(-1deg);
+    }
+
+    50% {
+        transform: translate(-3px, -2px) rotate(1deg);
+    }
+
+    60% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 2px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-3px, -2px) rotate(-1deg);
+    }
 }
