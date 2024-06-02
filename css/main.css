@@ -1,7 +1,9 @@
 /* ====================================== */
 /* ==============> GENERAL <=============*/
 
-:root {
+
+:root,
+.light {
     --main-black: #1f1f1f;
     --box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
     --main-gray: #787878;
@@ -10,7 +12,7 @@
 
     --bg-color: #fff;
     --font-default: "Inter", sans-serif;
-    --color-primary: #ce1212;
+    --color-primary: var(--main-blue);
     --color-secondary: #37373f;
     --color-default: #212529;
     --color-tertiary: #7f7f90;
@@ -29,9 +31,46 @@
     --hover-social-color: #ffffff4d;
     --hover-social-color-icon: #37373f66;
     --fa-font-solid: normal 900 1em / 1 "Font Awesome 6 Free";
-    --color-primary-hover: red;
+    --color-primary-hover: #58A0FF;
+    --bs-link-color: #37373f;
 }
 
+.d-none {
+    display: none;
+}
+
+.no-border {
+    border: none;
+}
+
+.dark {
+    --bg-color: #000;
+    --color-content-info: #fafafa;
+    --color-content: #ccccce;
+    --white: #000;
+    --black: #fff;
+    --color-light: #000000ff;
+    --hover-social-color: #000000aa;
+    --hover-social-color-icon: #ffffff66;
+    --bs-link-color: #7d7d7d;
+    --main-black: #ffffff;
+    --box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.06), 0 2px 5px 0 rgba(255, 255, 255, 0.2);
+    --main-gray: #adadad;
+    --main-blue: #00c3da;
+}
+
+.navbar-nav li>a,
+.navbar-nav li>button {
+    color: var(--bs-link-color);
+}
+
+.navbar-nav li>a:hover {
+    color: var(--black);
+}
+
+.navbar-nav li>button:hover {
+    color: var(--white);
+}
 
 * {
     margin: 0;
@@ -39,9 +78,14 @@
     box-sizing: border-box;
 }
 
-body {
+body,
+html {
+    margin: 0;
+    padding: 0;
     font-family: "Inter", sans-serif, 'Source Sans Pro', sans-serif;
     font-weight: 600;
+    scroll-behavior: smooth;
+    background-color: var(--bg-color);
 }
 
 #about,
@@ -86,7 +130,11 @@ body {
 }
 
 .text-bluelight {
-    color: var(--main-blue);
+    color: var(--color-primary);
+}
+
+.text-blue {
+    color: var(--color-primary-hover);
 }
 
 .w-35 {
@@ -118,7 +166,7 @@ body {
 .btn-bluelight {
     background-color: transparent;
     border-color: var(--white);
-    color: var(--main-black);
+    color: #fff;
     font-size: 0.9rem;
     font-weight: 500;
     padding: 15px;
@@ -126,8 +174,8 @@ body {
 }
 
 .btn-bluelight {
-    background-color: var(--main-blue);
-    border-color: var(--main-blue);
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
     color: var(--white);
 
 }
@@ -136,22 +184,26 @@ body {
     color: var(--main-black) !important;
 }
 
-.btn-white-1 {
-    color: var(--white);
-}
-
-.btn-white:hover,
 .btn-white-1:hover {
     background-color: var(--white);
-    color: var(--main-black);
+}
+
+.btn-white:hover {
+    color: var(--white);
+    background-color: var(--white);
 }
 
 .btn-bluelight:hover {
     background-image: linear-gradient(to right, rgba(0, 200, 200, 1), rgba(255, 255, 255, 0.13), rgba(0, 200, 200, 1));
-    border-color: var(--main-blue);
+    border-color: var(--color-primary-hover);
     color: var(--white);
-    background-color: var(--main-blue);
+    background-color: var(--color-primary-hover);
 
+}
+
+.title h6,
+h3 {
+    color: var(--black) !important;
 }
 
 
@@ -162,6 +214,7 @@ body {
     font-weight: 800;
     letter-spacing: -1px;
     position: relative;
+    color: var(--black) !important;
 }
 
 .title h4 {
@@ -201,7 +254,7 @@ body {
 }
 
 .logo-light {
-    background-image: url('../Images/vortex-logo.jpg');
+    background-image: url('../images/va.bef19b03.png');
     background-repeat: no-repeat;
     background-position: 0% 100%;
     background-size: contain;
@@ -209,7 +262,7 @@ body {
 }
 
 .logo-dark {
-    background-image: url('../Images/vortex-logo.jpg');
+    background-image: url('../images/va.bef19b03.png');
     background-repeat: no-repeat;
     background-position: 0% 100%;
     background-size: contain;
@@ -225,7 +278,7 @@ body:has(.work:target) li a[href="#work"],
 body:has(.services:target) li a[href="#services"],
 body:has(.pricing:target) li a[href="#pricing"],
 body:has(.team:target) li a[href="#team"] {
-    color: #000;
+    color: var(--black);
 }
 
 
@@ -319,13 +372,9 @@ body:has(.team:target) li a[href="#team"] {
     }
 
     .sec-header-btn:hover {
-        color: var(--color-primary);
+        color: var(--color-primary-hover);
     }
 }
-
-
-
-
 
 /* ====================================== */
 /* ===============> CAROUSEL <==============*/
@@ -415,16 +464,16 @@ body:has(.team:target) li a[href="#team"] {
 
 .hover-transition:hover i {
     transform: translateX(-10px);
-    color: var(--main-blue);
+    color: var(--color-primary-hover);
 }
 
 .hover-transition-next:hover i {
     transform: translateX(10px);
-    color: var(--main-blue);
+    color: var(--color-primary-hover);
 }
 
 .car-indicator {
-    background-color: var(--main-blue);
+    background-color: var(--color-primary);
     width: 10px;
     height: 10px;
 }
@@ -451,6 +500,9 @@ body:has(.team:target) li a[href="#team"] {
     font-weight: 500;
 }
 
+.carousel-item p {
+    color: var(--black);
+}
 
 /* ====================================== */
 /* ======> ANIMATION FOR CAROUSEL <====== */
@@ -458,12 +510,14 @@ body:has(.team:target) li a[href="#team"] {
     opacity: 0;
     animation: zoomOut 1s forwards;
     transition: opacity 0.1s ease-in, transform 0.4s;
+    color: #fff !important;
 }
 
 .cover-content p {
     opacity: 0;
     animation: zoomOut 1s 1s forwards;
     transition: opacity 0.1s 1s ease-in, transform 0.6;
+    color: #fff !important;
 }
 
 .cover-content .buttons {
@@ -478,6 +532,7 @@ body:has(.team:target) li a[href="#team"] {
     font-size: 1rem;
     padding: 20px 30px;
     transition: all 0.5s;
+    color: var(--black);
 }
 
 .hidden-btn:hover a {
@@ -485,12 +540,20 @@ body:has(.team:target) li a[href="#team"] {
     color: var(--white);
 }
 
-#about .typing::after {
-    color: var(--main-blue);
+#about .typing-quality::after {
+    color: var(--color-primary);
     font-size: 24px;
     position: relative;
     content: '';
-    animation: text 5s infinite;
+    animation: quality 5s infinite;
+}
+
+#about .typing-safety::after {
+    color: var(--color-primary);
+    font-size: 24px;
+    position: relative;
+    content: '';
+    animation: safety 5s infinite;
 }
 
 /* ====================================== */
@@ -505,11 +568,22 @@ body:has(.team:target) li a[href="#team"] {
     color: var(--white);
     opacity: 0;
     transform: translateY(60%);
-    transition: all 0.1s 1ms;
+    transition: all 0.5s 2ms;
+}
+
+.card {
+    transition: all 0.5s 4ms;
+}
+
+.card:hover {
+    transform: scale(1.1);
 }
 
 .card-layer a {
     color: #ffffffbb;
+    cursor: pointer;
+    font-size: 2rem;
+    text-decoration: none;
 }
 
 .card-layer a:hover {
@@ -526,6 +600,11 @@ body:has(.team:target) li a[href="#team"] {
     transform: translateY(0);
 }
 
+.card-title,
+.card-text {
+    color: #fff;
+}
+
 /* ====================================== */
 /* ==============> SERVICES <============*/
 #services h5 {
@@ -534,18 +613,19 @@ body:has(.team:target) li a[href="#team"] {
 
 /* ====================================== */
 /* ==============> PRICING <============*/
-.btn.btn-sm {
+.btn-sm {
     padding: 0 16px;
     font-size: 0.8rem;
     height: 40px;
     line-height: 40px;
     background-color: var(--main-blue);
-    color: var(--white);
+    color: var(--black);
 }
 
 .btn:hover {
     transform: translateY(-1px);
     background-image: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.13), transparent);
+    background-color: var(--color-primary-hover);
 }
 
 .btn:active {
@@ -587,17 +667,161 @@ body:has(.team:target) li a[href="#team"] {
     transition: all .3s ease;
 }
 
+
 /* ====================================== */
-/* ============> GET IN TOUCH <==========*/
-.form-control {
-    border-radius: 0;
-    padding: 12px;
+/* ===> ANIMATION <=== */
+@keyframes zoomOut {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* quality */
+@keyframes quality {
+    0% {
+        content: '| ';
+    }
+
+    5% {
+        content: 'q| ';
+    }
+
+    10% {
+        content: 'qu| ';
+    }
+
+    15% {
+        content: 'qua| ';
+    }
+
+    20% {
+        content: 'qual| ';
+    }
+
+    25% {
+        content: 'quali| ';
+    }
+
+    30% {
+        content: 'qualit| ';
+    }
+
+    35% {
+        content: 'quality| ';
+    }
+
+    45% {
+        content: 'quality ';
+    }
+
+    55% {
+        content: 'quality| ';
+    }
+
+    65% {
+        content: 'quality| ';
+    }
+
+    70% {
+        content: 'qualit| ';
+    }
+
+    75% {
+        content: 'quali| ';
+    }
+
+    80% {
+        content: 'qual| ';
+    }
+
+    85% {
+        content: 'qua| ';
+    }
+
+    90% {
+        content: 'qu| ';
+    }
+
+    95% {
+        content: 'q| ';
+    }
+
+    100% {
+        content: '| ';
+    }
 }
 
 
 
 
+/* safety */
+@keyframes safety {
+    0% {
+        content: '| ';
+    }
 
+    6% {
+        content: 's| ';
+    }
+
+    12% {
+        content: 'sa| ';
+    }
+
+    18% {
+        content: 'saf| ';
+    }
+
+    24% {
+        content: 'safe| ';
+    }
+
+    30% {
+        content: 'safet| ';
+    }
+
+    36% {
+        content: 'safety| ';
+    }
+
+    50% {
+        content: 'safety ';
+    }
+
+    60% {
+        content: 'safety| ';
+    }
+
+    66% {
+        content: 'safet| ';
+    }
+
+    72% {
+        content: 'safe| ';
+    }
+
+    80% {
+        content: 'saf| ';
+    }
+
+    88% {
+        content: 'sa| ';
+    }
+
+    93% {
+        content: 's| ';
+    }
+
+    100% {
+        content: 's| ';
+    }
+}
 
 
 
