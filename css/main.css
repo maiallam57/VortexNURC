@@ -10,7 +10,7 @@
 
     --bg-color: #fff;
     --font-default: "Inter", sans-serif;
-    --color-primary: #ce1212;
+    --color-primary: var(--main-blue);
     --color-secondary: #37373f;
     --color-default: #212529;
     --color-tertiary: #7f7f90;
@@ -29,7 +29,7 @@
     --hover-social-color: #ffffff4d;
     --hover-social-color-icon: #37373f66;
     --fa-font-solid: normal 900 1em / 1 "Font Awesome 6 Free";
-    --color-primary-hover: red;
+    --color-primary-hover: rgba(0, 200, 250, 0.8);
 }
 
 
@@ -86,7 +86,7 @@ body {
 }
 
 .text-bluelight {
-    color: var(--main-blue);
+    color: var(--color-primary);
 }
 
 .w-35 {
@@ -118,7 +118,7 @@ body {
 .btn-bluelight {
     background-color: transparent;
     border-color: var(--white);
-    color: var(--main-black);
+    color: var(--color-primary);
     font-size: 0.9rem;
     font-weight: 500;
     padding: 15px;
@@ -126,8 +126,8 @@ body {
 }
 
 .btn-bluelight {
-    background-color: var(--main-blue);
-    border-color: var(--main-blue);
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
     color: var(--white);
 
 }
@@ -143,14 +143,14 @@ body {
 .btn-white:hover,
 .btn-white-1:hover {
     background-color: var(--white);
-    color: var(--main-black);
+    color: var(--color-primary);
 }
 
 .btn-bluelight:hover {
     background-image: linear-gradient(to right, rgba(0, 200, 200, 1), rgba(255, 255, 255, 0.13), rgba(0, 200, 200, 1));
-    border-color: var(--main-blue);
+    border-color: var(--color-primary);
     color: var(--white);
-    background-color: var(--main-blue);
+    background-color: var(--color-primary);
 
 }
 
@@ -319,7 +319,7 @@ body:has(.team:target) li a[href="#team"] {
     }
 
     .sec-header-btn:hover {
-        color: var(--color-primary);
+        color: var(--color-primary-hover);
     }
 }
 
@@ -415,16 +415,16 @@ body:has(.team:target) li a[href="#team"] {
 
 .hover-transition:hover i {
     transform: translateX(-10px);
-    color: var(--main-blue);
+    color: var(--color-primary);
 }
 
 .hover-transition-next:hover i {
     transform: translateX(10px);
-    color: var(--main-blue);
+    color: var(--color-primary);
 }
 
 .car-indicator {
-    background-color: var(--main-blue);
+    background-color: var(--color-primary);
     width: 10px;
     height: 10px;
 }
@@ -485,12 +485,20 @@ body:has(.team:target) li a[href="#team"] {
     color: var(--white);
 }
 
-#about .typing::after {
-    color: var(--main-blue);
+#about .typing-quality::after {
+    color: var(--color-primary);
     font-size: 24px;
     position: relative;
     content: '';
-    animation: text 5s infinite;
+    animation: quality 5s infinite;
+}
+
+#about .typing-safety::after {
+    color: var(--color-primary);
+    font-size: 24px;
+    position: relative;
+    content: '';
+    animation: safety 5s infinite;
 }
 
 /* ====================================== */
@@ -616,202 +624,146 @@ body:has(.team:target) li a[href="#team"] {
     }
 }
 
-@keyframes text {
+/* quality */
+@keyframes quality {
     0% {
         content: '| ';
     }
 
-    2% {
-        content: 'a| ';
+    5% {
+        content: 'q| ';
     }
 
-    4% {
-        content: 'ap| ';
+    10% {
+        content: 'qu| ';
     }
 
-    6% {
-        content: 'app| ';
-    }
-
-    8% {
-        content: 'apps| ';
-    }
-
-    12% {
-        content: 'apps ';
-    }
-
-    14% {
-        content: 'apps| ';
-    }
-
-    18% {
-        content: 'app| ';
+    15% {
+        content: 'qua| ';
     }
 
     20% {
-        content: 'ap| ';
+        content: 'qual| ';
     }
 
-    22% {
-        content: 'a| ';
-    }
-
-    24% {
-        content: '| ';
-    }
-
-    26% {
-        content: 'w| ';
-    }
-
-    28% {
-        content: 'we| ';
+    25% {
+        content: 'quali| ';
     }
 
     30% {
-        content: 'web| ';
+        content: 'qualit| ';
     }
 
-    32% {
-        content: 'webs| ';
+    35% {
+        content: 'quality| ';
     }
 
-    34% {
-        content: 'websi| ';
+    45% {
+        content: 'quality ';
     }
 
-    36% {
-        content: 'websit| ';
+    55% {
+        content: 'quality| ';
     }
 
-    38% {
-        content: 'website| ';
-    }
-
-    40% {
-        content: 'websites| ';
-    }
-
-    44% {
-        content: 'websites';
-    }
-
-    48% {
-        content: 'websites| ';
-    }
-
-    52% {
-        content: 'website| ';
-    }
-
-    54% {
-        content: 'websit| ';
-    }
-
-    56% {
-        content: 'websi| ';
-    }
-
-    58% {
-        content: 'webs| ';
-    }
-
-    60% {
-        content: 'web| ';
-    }
-
-    62% {
-        content: 'we| ';
-    }
-
-    64% {
-        content: 'w| ';
-    }
-
-    66% {
-        content: '| ';
-    }
-
-    68% {
-        content: 's| ';
+    65% {
+        content: 'quality| ';
     }
 
     70% {
-        content: 'so| ';
+        content: 'qualit| ';
     }
 
-    72% {
-        content: 'sof| ';
-    }
-
-    74% {
-        content: 'soft| ';
-    }
-
-    76% {
-        content: 'softw| ';
-    }
-
-    78% {
-        content: 'softwa| ';
+    75% {
+        content: 'quali| ';
     }
 
     80% {
-        content: 'softwar| ';
+        content: 'qual| ';
     }
 
-    82% {
-        content: 'software| ';
-    }
-
-    82% {
-        content: 'software ';
-    }
-
-    84% {
-        content: 'software| ';
-    }
-
-    86% {
-        content: 'softwar| ';
-    }
-
-    88% {
-        content: 'softwa| ';
+    85% {
+        content: 'qua| ';
     }
 
     90% {
-        content: 'softw| ';
+        content: 'qu| ';
     }
 
-    92% {
-        content: 'soft| ';
-    }
-
-    94% {
-        content: 'sof| ';
-    }
-
-    96% {
-        content: 'so| ';
-    }
-
-    98% {
-        content: 's| ';
+    95% {
+        content: 'q| ';
     }
 
     100% {
         content: '| ';
     }
-
-
 }
 
 
 
 
+/* safety */
+@keyframes safety {
+    0% {
+        content: '| ';
+    }
 
+    6% {
+        content: 's| ';
+    }
+
+    12% {
+        content: 'sa| ';
+    }
+
+    18% {
+        content: 'saf| ';
+    }
+
+    24% {
+        content: 'safe| ';
+    }
+
+    30% {
+        content: 'safet| ';
+    }
+
+    36% {
+        content: 'safety| ';
+    }
+
+    50% {
+        content: 'safety ';
+    }
+
+    60% {
+        content: 'safety| ';
+    }
+
+    66% {
+        content: 'safet| ';
+    }
+
+    72% {
+        content: 'safe| ';
+    }
+
+    80% {
+        content: 'saf| ';
+    }
+
+    88% {
+        content: 'sa| ';
+    }
+
+    93% {
+        content: 's| ';
+    }
+
+    100% {
+        content: 's| ';
+    }
+}
 
 
 
