@@ -1,7 +1,9 @@
 /* ====================================== */
 /* ==============> GENERAL <=============*/
 
-:root {
+
+:root,
+.light {
     --main-black: #1f1f1f;
     --box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
     --main-gray: #787878;
@@ -29,9 +31,33 @@
     --hover-social-color: #ffffff4d;
     --hover-social-color-icon: #37373f66;
     --fa-font-solid: normal 900 1em / 1 "Font Awesome 6 Free";
-    --color-primary-hover: rgba(0, 200, 250, 0.8);
+    --color-primary-hover: #58A0FF;
+    --bs-link-color: #37373f;
 }
 
+.d-none {
+    display: none;
+}
+
+.no-border {
+    border: none;
+}
+
+.dark {
+    --bg-color: #000;
+    --color-content-info: #fafafa;
+    --color-content: #ccccce;
+    --white: #000;
+    --black: #fff;
+    --color-light: #000000ff;
+    --hover-social-color: #000000aa;
+    --hover-social-color-icon: #ffffff66;
+    --bs-link-color: #7d7d7d;
+}
+
+.navbar-nav li>a {
+    color: var(--bs-link-color);
+}
 
 * {
     margin: 0;
@@ -89,6 +115,10 @@ body {
     color: var(--color-primary);
 }
 
+.text-blue {
+    color: var(--color-primary-hover);
+}
+
 .w-35 {
     width: 35%;
 }
@@ -140,17 +170,21 @@ body {
     color: var(--white);
 }
 
-.btn-white:hover,
 .btn-white-1:hover {
     background-color: var(--white);
-    color: var(--color-primary);
+    color: var(--color-primary-hover);
+}
+
+.btn-white:hover {
+    color: var(--white);
+    background-color: var(--white);
 }
 
 .btn-bluelight:hover {
     background-image: linear-gradient(to right, rgba(0, 200, 200, 1), rgba(255, 255, 255, 0.13), rgba(0, 200, 200, 1));
-    border-color: var(--color-primary);
+    border-color: var(--color-primary-hover);
     color: var(--white);
-    background-color: var(--color-primary);
+    background-color: var(--color-primary-hover);
 
 }
 
@@ -225,7 +259,7 @@ body:has(.work:target) li a[href="#work"],
 body:has(.services:target) li a[href="#services"],
 body:has(.pricing:target) li a[href="#pricing"],
 body:has(.team:target) li a[href="#team"] {
-    color: #000;
+    color: var(--black);
 }
 
 
@@ -415,12 +449,12 @@ body:has(.team:target) li a[href="#team"] {
 
 .hover-transition:hover i {
     transform: translateX(-10px);
-    color: var(--color-primary);
+    color: var(--color-primary-hover);
 }
 
 .hover-transition-next:hover i {
     transform: translateX(10px);
-    color: var(--color-primary);
+    color: var(--color-primary-hover);
 }
 
 .car-indicator {
@@ -513,11 +547,22 @@ body:has(.team:target) li a[href="#team"] {
     color: var(--white);
     opacity: 0;
     transform: translateY(60%);
-    transition: all 0.1s 1ms;
+    transition: all 0.5s 2ms;
+}
+
+.card {
+    transition: all 0.5s 4ms;
+}
+
+.card:hover {
+    transform: scale(1.1);
 }
 
 .card-layer a {
     color: #ffffffbb;
+    cursor: pointer;
+    font-size: 2rem;
+    text-decoration: none;
 }
 
 .card-layer a:hover {
@@ -554,6 +599,7 @@ body:has(.team:target) li a[href="#team"] {
 .btn:hover {
     transform: translateY(-1px);
     background-image: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.13), transparent);
+    background-color: var(--color-primary-hover);
 }
 
 .btn:active {
@@ -595,20 +641,6 @@ body:has(.team:target) li a[href="#team"] {
     transition: all .3s ease;
 }
 
-/* ====================================== */
-/* ============> GET IN TOUCH <==========*/
-.form-control {
-    border-radius: 0;
-    padding: 12px;
-}
-
-.form-control:focus {
-    border-color: rgba(31, 31, 31, 1);
-    box-shadow: var(--box-shadow);
-    outline: none;
-    background-color: #fdf8e4;
-    border-radius: 0;
-}
 
 /* ====================================== */
 /* ===> ANIMATION <=== */
