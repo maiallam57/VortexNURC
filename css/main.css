@@ -378,7 +378,7 @@ body:has(.team:target) li a[href="#team"] {
 
 /* ====================================== */
 /* ===============> CAROUSEL <==============*/
-.slide-arrows>button {
+/* .slide-arrows>button {
     position: relative;
     width: 50px;
     height: 50px;
@@ -502,11 +502,11 @@ body:has(.team:target) li a[href="#team"] {
 
 .carousel-item p {
     color: var(--black);
-}
+} */
 
 /* ====================================== */
 /* ======> ANIMATION FOR CAROUSEL <====== */
-.cover-content h1 {
+/* .cover-content h1 {
     opacity: 0;
     animation: zoomOut 1s forwards;
     transition: opacity 0.1s ease-in, transform 0.4s;
@@ -524,7 +524,7 @@ body:has(.team:target) li a[href="#team"] {
     opacity: 0;
     animation: zoomOut 1s 2s forwards;
     transition: opacity 0.1s 2s ease-in, transform 0.8s;
-}
+} */
 
 /* ====================================== */
 /* ===============> ABOUT <==============*/
