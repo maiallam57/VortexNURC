@@ -192,7 +192,7 @@
                                     Notably, 12 volts are utilized to power
                                     various components such as DCVs, LEDs, ESCs,
                                     Arduino Nano, and cameras, while 5 volts
-                                    from the Buck Converter -fig (2) are
+                                    from the Buck Converter -fig (1) are
                                     allocated to power the Raspberry Pi and
                                     Pixhawk.</p>
                                 <p class="pb-5">Particular emphasis is placed on
@@ -201,7 +201,7 @@
                                     overall power consumption. To effectively
                                     manage power consumption, thruster movement
                                     is limited to one movement at a time, with
-                                    speed limited to1680 µs -fig(3) input to
+                                    speed limited to1680 µs -fig(2) input to
                                     the ESC. This required the development of a
                                     software locking system to regulate the
                                     current drawn by the thrusters. Basically,
@@ -213,7 +213,8 @@
                                     safety factor of <strong>1.3, a
                                         25amp</strong>fuse is still
                                     used as a precaution. Detailed power
-                                    distribution is provided in Table 3.</p>
+                                    distribution is provided in following
+                                    Table.</p>
 
                                 <div class="d-flex text-center pb-5">
                                     <figure class="figure">
@@ -382,7 +383,7 @@
                                             embarked
                                             on
                                             developing a double-layer PCB -fig
-                                            (24)
+                                            (3)
                                             to
                                             optimize space utilization in the
                                             bottom
@@ -419,7 +420,7 @@
                                                 alt="Previous PCB">
                                             <figcaption
                                                 class="figure-caption">Figure
-                                                4:Previous PCB</figcaption>
+                                                3:Previous PCB</figcaption>
                                         </figure>
                                     </div>
                                 </div>
@@ -459,7 +460,7 @@
                                 <p>Furthermore, we implemented a
                                     circular
                                     design
-                                    for the PCB -fig (26), and
+                                    for the PCB -fig (4,5), and
                                     strategically
                                     positioned the components across the
                                     two
@@ -512,7 +513,7 @@
                                     <div class="col-8">
                                         <p>The control of the six T200 thrusters
                                             is facilitated by six electronic
-                                            speed controllers (ESCs) -fig (27).
+                                            speed controllers (ESCs) -fig (6).
                                             In this configuration, the Pixhawk
                                             sends pulse width modulation (PWM)
                                             signals to regulate both the speed
@@ -533,7 +534,7 @@
                                                 alt="ESCs">
                                             <figcaption
                                                 class="figure-caption">Figure
-                                                4: ESCs</figcaption>
+                                                6: ESCs</figcaption>
                                         </figure>
                                     </div>
                                 </div>
@@ -552,7 +553,7 @@
                                     prevent
                                     overheating, the temperature of the
                                     MOSFETs
-                                    -fig (27), was closely monitored and
+                                    -fig (7), was closely monitored and
                                     discounted. both 5/2 DCVs are reused
                                     to
                                     regulate the airflow to the
@@ -587,7 +588,7 @@
                                                 alt="MOSFET Circuit">
                                             <figcaption
                                                 class="figure-caption">Figure
-                                                4: MOSFET Circuit</figcaption>
+                                                7: MOSFET Circuit</figcaption>
                                         </figure>
                                     </div>
                                 </div>
@@ -603,7 +604,7 @@
                                             the ROV is facilitated by two
                                             Category 6 (CAT6) Ethernet cables,
                                             each comprising four twisted-pair
-                                            cables -fig (28). One of these
+                                            cables -fig (8). One of these
                                             cables links the RJ45 port to the
                                             Raspberry Pi-RJ45 and is responsible
                                             for carrying communication signals.
@@ -622,7 +623,7 @@
                                                 alt="Tether Diagram">
                                             <figcaption
                                                 class="figure-caption">Figure
-                                                4: Tether Diagram</figcaption>
+                                                8: Tether Diagram</figcaption>
                                         </figure>
                                     </div>
                                 </div>
