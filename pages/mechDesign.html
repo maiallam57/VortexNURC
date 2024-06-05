@@ -9,16 +9,16 @@
         <link rel="icon" href="../images/va.bef19b03.png">
         <title>Vortex</title>
     </head>
-    <body>
+    <body id="body" class="light">
 
-        <!--* ======= NAVBAR ======= -->
-        <div class="home" id="home">
+          <!--* ======= NAVBAR ======= -->
+          <div class="home" id="home">
             <nav id="nav"
-                class="navbar navbar-expand-lg navbar-dark z-3 fixed-top border-bottom border-gray">
+                class="navbar navbar-expand-lg  navbar-dark z-3 fixed-top border-bottom border-gray">
                 <div class="container">
                     <div class="container px-5 d-flex justify-content-between">
                         <a id="logo" class="navbar-brand logo-light"
-                            href="../index.html"></a>
+                            href="#home"></a>
                         <button class="navbar-toggler" type="button"
                             data-bs-toggle="collapse"
                             data-bs-target="#navbarNavDropdown"
@@ -37,8 +37,7 @@
                                         href="../index.html">Home</a>
                                 </li>
                                 <li class="nav-item px-2">
-                                    <a class="nav-link"
-                                        href="../index.html#about">About</a>
+                                    <a class="nav-link" href="#about">About</a>
                                 </li>
                                 <li class="nav-item px-2">
                                     <a class="nav-link"
@@ -54,7 +53,7 @@
                                 </li>
                                 <li class="nav-item px-2">
                                     <a class="nav-link"
-                                        href="https://www.nurc.us/"
+                                        href="../index.htmlhttps://www.nurc.us/"
                                         target="_blank">NURC</a>
                                 </li>
                                 <li class="nav-item px-2">
@@ -84,6 +83,25 @@
                                             target="_blank"><i
                                                 class="fa-brands fa-instagram"></i></a>
                                     </li>
+
+                                    <li class="nav-item px-1">
+                                        <button for="mode"
+                                            class="dark no-border nav-link"
+                                            onclick="darkMode()"
+                                            id="darkIcon"> <i
+                                                class="fa-solid fa-moon"></i>
+                                        </button>
+                                    </li>
+
+                                    <li class="nav-item px-1">
+                                        <button for="mode"
+                                            class="light d-none no-border nav-link"
+                                            onclick="lightMode()"
+                                            id="lightIcon"><i
+                                                class="fa-regular fa-sun"></i>
+                                        </button>
+                                    </li>
+
                                 </ul>
                             </div>
 
@@ -861,8 +879,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    In the enclosure, no chemical sealant was applied. Moreover, the enclosure has a 5mm-thick laser-cut clear PMMA face from one side -fig (20), and a PMMA dome -fig (19) from the other side, which were selected to provide clear vision for the cameras, as well as to check the compression of the O-ring. HDPE material was selected as there are no pores formed within the material, meaning that it can act as a perfectly sealed container. Stress analysis -fig (19) was made by SolidWorks static analysis to ensure that the enclosure can withstand a pressure up to 10 meters underwater with a factor of safety 1.1.</p>
-                                    <p></p>
+                                    <p>In the enclosure, no chemical sealant was applied. Moreover, the enclosure has a 5mm-thick laser-cut clear PMMA face from one side -fig (20), and a PMMA dome -fig (19) from the other side, which were selected to provide clear vision for the cameras, as well as to check the compression of the O-ring. HDPE material was selected as there are no pores formed within the material, meaning that it can act as a perfectly sealed container. Stress analysis -fig (19) was made by SolidWorks static analysis to ensure that the enclosure can withstand a pressure up to 10 meters underwater with a factor of safety 1.1.</p>
+                                </p>
                                     <div
                                             class="text-center justify-content-between">
                                     <figure class="figure">

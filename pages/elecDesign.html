@@ -9,16 +9,16 @@
         <link rel="icon" href="../images/va.bef19b03.png">
         <title>Vortex</title>
     </head>
-    <body>
+    <body id="body" class="light">
 
         <!--* ======= NAVBAR ======= -->
         <div class="home" id="home">
             <nav id="nav"
-                class="navbar navbar-expand-lg navbar-dark z-3 fixed-top border-bottom border-gray">
+                class="navbar navbar-expand-lg  navbar-dark z-3 fixed-top border-bottom border-gray">
                 <div class="container">
                     <div class="container px-5 d-flex justify-content-between">
                         <a id="logo" class="navbar-brand logo-light"
-                            href="../index.html"></a>
+                            href="#home"></a>
                         <button class="navbar-toggler" type="button"
                             data-bs-toggle="collapse"
                             data-bs-target="#navbarNavDropdown"
@@ -37,8 +37,7 @@
                                         href="../index.html">Home</a>
                                 </li>
                                 <li class="nav-item px-2">
-                                    <a class="nav-link"
-                                        href="../index.html#about">About</a>
+                                    <a class="nav-link" href="#about">About</a>
                                 </li>
                                 <li class="nav-item px-2">
                                     <a class="nav-link"
@@ -54,7 +53,7 @@
                                 </li>
                                 <li class="nav-item px-2">
                                     <a class="nav-link"
-                                        href="https://www.nurc.us/"
+                                        href="../index.htmlhttps://www.nurc.us/"
                                         target="_blank">NURC</a>
                                 </li>
                                 <li class="nav-item px-2">
@@ -84,6 +83,25 @@
                                             target="_blank"><i
                                                 class="fa-brands fa-instagram"></i></a>
                                     </li>
+
+                                    <li class="nav-item px-1">
+                                        <button for="mode"
+                                            class="dark no-border nav-link"
+                                            onclick="darkMode()"
+                                            id="darkIcon"> <i
+                                                class="fa-solid fa-moon"></i>
+                                        </button>
+                                    </li>
+
+                                    <li class="nav-item px-1">
+                                        <button for="mode"
+                                            class="light d-none no-border nav-link"
+                                            onclick="lightMode()"
+                                            id="lightIcon"><i
+                                                class="fa-regular fa-sun"></i>
+                                        </button>
+                                    </li>
+
                                 </ul>
                             </div>
 
@@ -93,117 +111,549 @@
             </nav>
         </div>
 
-        <!--* ======= ELECTRICAL DESIGN ======= -->
-        <div class="elec-design container py-5 my-5">
-
+        <div class="container py-5 my-5">
             <div class="title text-center my-5">
-                <h2 data-bigletter="S">Software Design</h2>
-                <h4>Our Special Features</h4>
+                <h2 data-bigletter="S">Electrical Design</h2>
+                <h4>Our Innovative Design</h4>
             </div>
+        </div>
 
-            <div class="container py-5 my-5">
+        <!--* ======= ELECTRICAL DESIGN ======= -->
+        <div class="elec-design container ">
+            <div class="container">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-3 g-3 fixed-sidebar">
                         <nav id="navbar-example3"
                             class="h-100 flex-column align-items-stretch pe-4 border-end">
                             <nav class="nav nav-pills flex-column">
                                 <a class="nav-link"
-                                    href="#design-rational">DESIGN
-                                    RATIONALE</a>
+                                    href="#electrical-system">Electrical
+                                    System</a>
+                                <a class="nav-link my-1"
+                                    href="#power-distribution">A. Power
+                                    Distribution and Calculations</a>
+                                <a class="nav-link my-1" href="#main-pcb">B.
+                                    Main PCB </a>
+                                <a class="nav-link my-1" href="#control-sys">C.
+                                    Control System</a>
                                 <nav class="nav nav-pills flex-column">
                                     <a class="nav-link ms-3 my-1"
-                                        href="#design-evolution">DESIGN
-                                        EVOLUTION</a>
+                                        href="#thrust-control">1. Thruster’s
+                                        control and Thrust force.</a>
+                                    <a class="nav-link ms-3 my-1"
+                                        href="#dcv-control">2. DCV control</a>
                                 </nav>
-
-                                <a class="nav-link my-1"
-                                    href="#mechanical-design">A. Mechanical
-                                    Design
-                                    Process</a>
-                                <a class="nav-link my-1"
-                                    href="#structure">B. Vehicle Structure
-                                    Approach</a>
-                                <a class="nav-link my-1"
-                                    href="#features">C. Mechanical design
-                                    Features and Modifications
-                                </a>
-                                <a class="nav-link my-1"
-                                    href="#buoyancy-stability">D. Buoyancy and
-                                    Stability</a>
-                                <a class="nav-link my-1"
-                                    href="#propulsion">E. Propulsion
-                                    Process</a>
-                                <a class="nav-link my-1"
-                                    href="#sealing">F. Electrical enclosure and
-                                    sealing</a>
+                                <a class="nav-link my-1" href="#tether">D.
+                                    Tether</a>
+                                <nav class="nav nav-pills flex-column">
+                                    <a class="nav-link ms-3 my-1"
+                                        href="#communication">1.
+                                        Communication</a>
+                                    <a class="nav-link ms-3 my-1"
+                                        href="#power">2. Power</a>
+                                </nav>
 
                             </nav>
                         </nav>
                     </div>
 
-                    <div class="col-8">
+                    <div class="col-8 offset-3">
                         <div data-bs-spy="scroll"
                             data-bs-target="#navbar-example3"
                             data-bs-smooth-scroll="true"
                             class="scrollspy-example-2"
                             tabindex="0">
 
-                            <div id="design-rational">
-                                <h4>DESIGN
-                                    RATIONALE</h4>
-                                <p>...</p>
+                            <div id="electrical-system" class="mb-5">
+                                <h4>ELECTRICAL SYSTEM</h4>
+                                <p>Using pluggable wire connections, the
+                                    underwater electrical system is designed to
+                                    be straightforward, dependable, and simple
+                                    to install. To minimize PCB size and
+                                    accommodate large components like the
+                                    Raspberry Pi, the electrical team
+                                    specifically designed and produced a
+                                    double-layer PCB</p>
                             </div>
 
-                            <div id="design-evolution">
-                                <h4>DESIGN EVOLUTION</h4>
-                                <p>...</p>
+                            <div id="power-distribution" class="mb-5">
+                                <h5>1. Power Distribution and Calculations</h5>
+                                <p>The power supply from the 12-VDC source is
+                                    directed through a 25 Ampere fuse located at
+                                    the surface-end of the tether before
+                                    reaching the onboard electrical system.
+                                    However, fluctuations in power caused by
+                                    voltage drop across the tether during
+                                    increased loads disrupt the functioning of
+                                    the cameras. To address this issue and
+                                    stabilize the voltage, a repurposed
+                                    buck-boost converter -fig (1) from Vortex
+                                    Academy was integrated into the system.
+                                    Notably, 12 volts are utilized to power
+                                    various components such as DCVs, LEDs, ESCs,
+                                    Arduino Nano, and cameras, while 5 volts
+                                    from the Buck Converter -fig (2) are
+                                    allocated to power the Raspberry Pi and
+                                    Pixhawk.</p>
+                                <p class="pb-5">Particular emphasis is placed on
+                                    propulsion
+                                    control due to its significant impact on
+                                    overall power consumption. To effectively
+                                    manage power consumption, thruster movement
+                                    is limited to one movement at a time, with
+                                    speed limited to1680 µs -fig(3) input to
+                                    the ESC. This required the development of a
+                                    software locking system to regulate the
+                                    current drawn by the thrusters. Basically,
+                                    the maximum power consumption is limited to
+                                    352.56 watts, with a peak current of
+                                    <strong>17.88 amps.</strong> Therefore,
+                                    although the required fuse is calculated to
+                                    be 23.244 amps based on a
+                                    safety factor of <strong>1.3, a
+                                        25amp</strong>fuse is still
+                                    used as a precaution. Detailed power
+                                    distribution is provided in Table 3.</p>
+
+                                <div class="d-flex text-center pb-5">
+                                    <figure class="figure">
+                                        <img
+                                            src="../images/buck and buck boost.PNG"
+                                            class="figure-img img-fluid rounded text-center"
+                                            alt="buck-boost & Buck
+                                            converter">
+                                        <figcaption
+                                            class="figure-caption">Figure 1:
+                                            buck-boost & Buck
+                                            converter</figcaption>
+                                    </figure>
+                                    <figure class="figure">
+                                        <img
+                                            src="../images/pwm.png"
+                                            class="figure-img img-fluid rounded text-center"
+                                            alt="Thruster Power Curve">
+                                        <figcaption
+                                            class="figure-caption">Figure 2:
+                                            Thruster Power Curve by Blue
+                                            Robotics</figcaption>
+                                    </figure>
+                                </div>
+
+                                <div class="table-responsive my-3">
+
+                                    <table
+                                        class="table table-bordered table-hover">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th>Component</th>
+                                                <th>Voltage (Volts)</th>
+                                                <th>Max current (Amperes)</th>
+                                                <th>Max power (Watts)</th>
+                                                <th>Quantity</th>
+                                                <th>Total Max power (Watts)</th>
+                                                <th>Total max current
+                                                    (Amperes)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>T200</td>
+                                                <td>12</td>
+                                                <td>2.5</td>
+                                                <td>30</td>
+                                                <td>6</td>
+                                                <td>180</td>
+                                                <td>15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bilge pump</td>
+                                                <td>12</td>
+                                                <td>10</td>
+                                                <td>120</td>
+                                                <td>1</td>
+                                                <td>120</td>
+                                                <td>10</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Raspberry pi 4</td>
+                                                <td>5</td>
+                                                <td>3</td>
+                                                <td>15</td>
+                                                <td>1</td>
+                                                <td>15</td>
+                                                <td>3</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Pixhawk</td>
+                                                <td>5</td>
+                                                <td>3</td>
+                                                <td>15</td>
+                                                <td>1</td>
+                                                <td>15</td>
+                                                <td>3</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CCTV Cameras</td>
+                                                <td>12</td>
+                                                <td>0.275</td>
+                                                <td>3.3</td>
+                                                <td>4</td>
+                                                <td>13.2</td>
+                                                <td>1.1</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Low Light Camera</td>
+                                                <td>12</td>
+                                                <td>0.22</td>
+                                                <td>2.64</td>
+                                                <td>1</td>
+                                                <td>2.64</td>
+                                                <td>0.22</td>
+                                            </tr>
+                                            <tr>
+                                                <td>DCV</td>
+                                                <td>12</td>
+                                                <td>0.28</td>
+                                                <td>3.36</td>
+                                                <td>2</td>
+                                                <td>6.72</td>
+                                                <td>0.56</td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th colspan="5"
+                                                    class="text-right">Total
+                                                    Power</th>
+                                                <th>352.56 Watts</th>
+                                                <th></th>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="5"
+                                                    class="text-right">Maximum
+                                                    Power Consumption</th>
+                                                <th>232.56 Watts</th>
+                                                <th></th>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="5"
+                                                    class="text-right">Actual
+                                                    Current Calculations</th>
+                                                <th>17.88 Amperes</th>
+                                                <th></th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+
+                                <h5> Fuse Calculation:
+                                </h5>
+                                <p>
+                                    ROV Overcurrent Protection= ROV Full Load
+                                    Current * 130%
+                                    <br />Fuse Rating = [ (Blue Robotics
+                                    Thrusters) +
+                                    other system] *130%
+                                    <br />Fuse Rating (horizontal thrusters) =
+                                    [(4*2.5
+                                    Amps) +(7.88 Amps)] * 130%= 23.244 Amps
+                                    <br />Fuse Rating (vertical thrusters) =
+                                    [(2*2.5
+                                    Amps) +(7.88 Amps)] * 130%= 16.744 Amps
+                                    <br />Maximum Fuse Rating = 25 Amps
+                                    <br />The implementation of the software
+                                    interlocking system, which imposes
+                                    individual speed limits for each thruster,
+                                    ensures that maximum power consumption is
+                                    never attained. Moreover, this mechanism
+                                    prevents all six thrusters from operating
+                                    simultaneously at maximum speed. As a
+                                    result, the actual maximum current draw is
+                                    17.88 amps.
+
+                                </p>
                             </div>
 
-                            <div id="mechanical-design">
-                                <h5>Mechanical Design
-                                    Process</h5>
-                                <p>...</p>
+                            <div id="main-pcb" class="mb-5">
+                                <h4>Main PCB</h4>
+                                <div class="row">
+                                    <div class="col-8">
+                                        <p>Last year, the electrical team
+                                            embarked
+                                            on
+                                            developing a double-layer PCB -fig
+                                            (24)
+                                            to
+                                            optimize space utilization in the
+                                            bottom
+                                            side electrical system of our ROV.
+                                            Our
+                                            primary goal was to accommodate all
+                                            essential components while
+                                            maintaining
+                                            operational efficiency. Central to
+                                            this
+                                            Endeavor was the integration of
+                                            protective
+                                            measures, including a fuse, aimed at
+                                            safeguarding the PCB from
+                                            overcurrent
+                                            during
+                                            system operation. This meticulously
+                                            designed
+                                            board seamlessly incorporates vital
+                                            elements
+                                            such as the Arduino, ESCs, and
+                                            IRF540
+                                            MOSFETS, ensuring robust signal
+                                            connections
+                                            and efficient power delivery.
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="col-4 d-flex justify-content-center text-center">
+                                        <figure class="figure">
+                                            <img
+                                                src="../images/Previous PCB.png"
+                                                class="figure-img img-fluid rounded text-center"
+                                                alt="Previous PCB">
+                                            <figcaption
+                                                class="figure-caption">Figure
+                                                4:Previous PCB</figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <p>
+                                    To enhances our design and
+                                    accommodate
+                                    potential system enhancements or
+                                    upgrades,
+                                    we recently integrated a Raspberry
+                                    Pi 4
+                                    and
+                                    a Pixhawk into the PCB. This
+                                    addition
+                                    aims
+                                    to expand the capabilities of our
+                                    ROV,
+                                    improving its computational prowess
+                                    and
+                                    autonomy. Before finalizing the
+                                    Gerber
+                                    Files
+                                    for production, we conducted
+                                    comprehensive
+                                    testing of our updated design using
+                                    a
+                                    prototype PCB. This rigorous testing
+                                    phase
+                                    was essential to validate the
+                                    seamless
+                                    functionality and compatibility of
+                                    the
+                                    PCB
+                                    with the newly integrated
+                                    components.
+                                </p>
+
+                                <p>Furthermore, we implemented a
+                                    circular
+                                    design
+                                    for the PCB -fig (26), and
+                                    strategically
+                                    positioned the components across the
+                                    two
+                                    layers to optimize space utilization
+                                    within
+                                    the enclosure. This innovative
+                                    approach
+                                    not
+                                    only minimizes spatial constraints
+                                    but
+                                    also
+                                    enhances the overall compactness and
+                                    efficiency of the electrical system
+                                    within
+                                    the ROV.</p>
+
+                                <div
+                                    class="d-flex justify-content-center text-center">
+                                    <figure class="figure">
+                                        <img src="../images/pcb2.png"
+                                            class="figure-img img-fluid rounded text-center"
+                                            alt="front PCB">
+                                        <figcaption
+                                            class="figure-caption">Figure
+                                            4:
+                                            Front Face of
+                                            PCB</figcaption>
+                                    </figure>
+                                    <figure class="figure">
+                                        <img
+                                            src="../images/pcb1.jpg"
+                                            class="figure-img img-fluid rounded text-center"
+                                            alt="back PCB">
+                                        <figcaption
+                                            class="figure-caption">Figure
+                                            5:
+                                            Back Face of
+                                            PCB</figcaption>
+                                    </figure>
+                                </div>
+
                             </div>
 
-                            <div id="structure">
-                                <h5>Vehicle Structure
-                                    Approach</h5>
-                                <p>...</p>
+                            <div id="control-sys" class="mb-5">
+                                <h4 class="mb-3">Control System</h4>
+                                <h5 class="text-gray-bold"
+                                    id="thrust-control">1. Thruster’s control
+                                    and Thrust force.</h5>
+                                <div class="row">
+                                    <div class="col-8">
+                                        <p>The control of the six T200 thrusters
+                                            is facilitated by six electronic
+                                            speed controllers (ESCs) -fig (27).
+                                            In this configuration, the Pixhawk
+                                            sends pulse width modulation (PWM)
+                                            signals to regulate both the speed
+                                            and direction of the thrusters. To
+                                            simplify the internal wiring layout,
+                                            the ESCs were incorporated onto the
+                                            PCB, enabling them to receive both
+                                            signal and power directly from the
+                                            board.
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="col-4 d-flex justify-content-center text-center">
+                                        <figure class="figure">
+                                            <img
+                                                src="../images/esc.png"
+                                                class="figure-img img-fluid rounded text-center"
+                                                alt="ESCs">
+                                            <figcaption
+                                                class="figure-caption">Figure
+                                                4: ESCs</figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+
+                                <h5 id="dcv-control" class="text-gray-bold">2.
+                                    DCV control:
+                                </h5>
+
+                                <p> We utilize IRF540 MOSFETs to control
+                                    the two
+                                    5/2 DCV, managing the high power of
+                                    the
+                                    loads. These MOSFETs receive signals
+                                    from
+                                    the pixhawk Auxiliary pins. To
+                                    prevent
+                                    overheating, the temperature of the
+                                    MOSFETs
+                                    -fig (27), was closely monitored and
+                                    discounted. both 5/2 DCVs are reused
+                                    to
+                                    regulate the airflow to the
+                                    pneumatic
+                                    cylinder connected to the clutch and
+                                    the
+                                    other one for our rotational gripper
+                                </p>
+                                <div class="row">
+                                    <div class="col-8">
+                                        <p>
+                                            <strong>IRF640 MOSFET temperature
+                                                calculations:</strong>
+                                            <br />ID = 0.28 A
+                                            <br /> RDS (on) = 0.18 ohm
+                                            <br />Pdissipated = RDS (on) x ID 2
+                                            =
+                                            0.014
+                                            Watt
+                                            <br />Rth j-a = 62 °C/Watt
+                                            <br />∆T = Tth j-a x Pdissipated
+                                            =0.87
+                                            °C
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="col-4 d-flex justify-content-center text-center">
+                                        <figure class="figure">
+                                            <img
+                                                src="../images/MOSFET Circuit.png"
+                                                class="figure-img img-fluid rounded text-center"
+                                                alt="MOSFET Circuit">
+                                            <figcaption
+                                                class="figure-caption">Figure
+                                                4: MOSFET Circuit</figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div id="features">
-                                <h5>Mechanical design
-                                    Features and Modifications</h5>
-                                <p>...</p>
-                            </div>
+                            <div id="tether" class="mb-5">
+                                <h4>Tether</h4>
+                                <h5 id="communication" class="text-gray-bold">1.
+                                    Communication </h5>
+                                <div class="row">
+                                    <div class="col-8">
+                                        <p>Data transmission from the station to
+                                            the ROV is facilitated by two
+                                            Category 6 (CAT6) Ethernet cables,
+                                            each comprising four twisted-pair
+                                            cables -fig (28). One of these
+                                            cables links the RJ45 port to the
+                                            Raspberry Pi-RJ45 and is responsible
+                                            for carrying communication signals.
+                                            Meanwhile, the other cable connects
+                                            to the remaining four. Our choice of
+                                            CAT6 cables is based on their serial
+                                            transmission rate of 250 kbps
+                                            (kilobits per second)</p>
+                                    </div>
+                                    <div
+                                        class="col-4 d-flex justify-content-center text-center">
+                                        <figure class="figure">
+                                            <img
+                                                src="../images/Tether Diagram.png"
+                                                class="figure-img img-fluid rounded text-center"
+                                                alt="Tether Diagram">
+                                            <figcaption
+                                                class="figure-caption">Figure
+                                                4: Tether Diagram</figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
 
-                            <div id="buoyancy-stability">
-                                <h5>Buoyancy and
-                                    Stability</h5>
-                                <p>...</p>
-                            </div>
+                                <h5 id="power" class="text-gray-bold">2. Power
+                                </h5>
+                                <p>Utilizing the AWG wire sizing chart, we
+                                    selected a 6 AWG (4 mm) power cable to
+                                    mitigate voltage drop across the tether ends
+                                    and ensure a stable voltage supply to the
+                                    system. Given our current limit of 23.244
+                                    amps, our wire selection was determined
+                                    through the following calculations:</p>
 
-                            <div id="propulsion">
-                                <h5>Propulsion</h5>
-                                <p>...</p>
-                            </div>
-                            <div id="sealing">
-                                <h4>Electrical enclosure and
-                                    sealing</h4>
-                                <p>...</p>
+                                <p>Max power Consumption = 232.56watts
+                                    <br /> Max Current = 17.88 Ampere
+                                    <br /> Fuse Calculations:
+                                    <br /> 17.88 X 1.3 = 23.244Ampere
+                                    <br /> Fuse used = 25 Ampere
+                                </p>
+
                             </div>
 
                         </div>
                     </div>
                 </div>
+
             </div>
 
-        </div>
+            <script src="../js/bootstrap.bundle.min.js"></script>
+            <script src="../js/script.js"></script>
 
-
-        
-        <script src="../js/bootstrap.bundle.min.js"></script>
-        <script src="../js/script.js"></script>
-
-    </body>
-</html>
+        </body>
+    </html>

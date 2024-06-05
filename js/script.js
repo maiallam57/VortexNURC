@@ -31,12 +31,16 @@ function lightMode(){
     darkIcon.classList.remove("d-none");
     body.classList.remove("dark");
     body.classList.add("light");
+    myLogo.classList.remove("logo-dark");
+    myLogo.classList.add("logo-light");
 }
 
 function darkMode(){
     darkIcon.classList.add("d-none");
     lightIcon.classList.remove("d-none");
     body.classList.add("dark");
+    myLogo.classList.remove("logo-light");
+    myLogo.classList.add("logo-dark");
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -58,5 +62,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-
+document.getElementById('toggleButton-info').addEventListener('click', function () {
+    const btn = this;
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.textContent = expanded ? 'READ LESS' : 'READ MORE';
+});
