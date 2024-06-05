@@ -137,6 +137,10 @@ html {
     color: var(--color-primary-hover);
 }
 
+.w-55 {
+    width: 55%;
+}
+
 .w-35 {
     width: 35%;
 }
@@ -207,6 +211,19 @@ h3 {
 }
 
 
+.fixed-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    margin-top: 1rem;
+    overflow-y: auto;
+    padding-top: 100px;
+    padding-left: 50px;
+    box-shadow: var(--box-shadow);
+    border-right: 1px solid #d2d0d0;
+}
+
 /* ====================================== */
 /* ===============> TITLE <==============*/
 .title h2 {
@@ -231,7 +248,7 @@ h3 {
     content: attr(data-bigletter);
     color: var(--main-black);
     font-size: 2em;
-    opacity: 0.2;
+    opacity: 0.5;
     position: absolute;
     top: -0.5em;
     left: -0.15em;
@@ -240,6 +257,12 @@ h3 {
 
 /* ====================================== */
 /* ===============> NAVBAR <==============*/
+.navbar,
+nav,
+#home {
+    z-index: 9999 !important;
+}
+
 #navbar>li {
     padding: 20px 15px;
 }
@@ -555,6 +578,63 @@ body:has(.team:target) li a[href="#team"] {
     content: '';
     animation: safety 5s infinite;
 }
+
+
+
+/* ====================================== */
+/* ===============> GALLARY <==============*/
+.gallery-photos {
+    --gap: 1.25rem;
+    height: 72.8125rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+.gallery-photos picture {
+    width: calc(calc(100% - var(--gap) * 2) / 3);
+    border: 4px solid #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-photos picture img {
+    width: 100%;
+    transition: scale var(--animation-duration);
+}
+
+.gallery-photos picture .layer {
+    width: 100%;
+    height: 100%;
+    padding: 0.9375rem;
+    background-color: #00000096;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    transition: top var(--animation-duration);
+}
+
+.gallery-photos picture .layer p {
+    color: #ddd;
+    text-align: center;
+}
+
+.gallery-photos picture:hover img {
+    scale: 1.1;
+}
+
+.gallery-photos picture:hover .layer {
+    top: 0;
+}
+
 
 /* ====================================== */
 /* ================> TEAM <==============*/

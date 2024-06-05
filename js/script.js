@@ -5,6 +5,8 @@ var darkIcon = document.getElementById("darkIcon");
 var lightIcon = document.getElementById("lightIcon");
 var body = document.getElementById("body");
 
+var toggleButton = document.getElementById('toggleButton');
+var collapseElement = document.getElementById('collapseExample');
 
 function onScroll() {
 
@@ -20,6 +22,9 @@ function onScroll() {
         myLogo.classList.remove("logo-dark");
     }
 }
+onScroll();
+window.onscroll = onScroll;
+
 
 function lightMode(){
     lightIcon.classList.add("d-none");
@@ -34,6 +39,24 @@ function darkMode(){
     body.classList.add("dark");
 }
 
-onScroll();
+document.addEventListener('DOMContentLoaded', function () {
+    toggleButton.addEventListener('click', function () {
+        if (collapseElement.classList.contains('show')) {
+            toggleButton.textContent = 'SEE MORE';
+        } else {
+            toggleButton.textContent = 'SEE LESS';
+        }
+    });
 
-window.onscroll = onScroll;
+    // Also handle the collapse event to update text correctly
+    collapseElement.addEventListener('shown.bs.collapse', function () {
+        toggleButton.textContent = 'SEE LESS';
+    });
+
+    collapseElement.addEventListener('hidden.bs.collapse', function () {
+        toggleButton.textContent = 'SEE MORE';
+    });
+});
+
+
+
