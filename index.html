@@ -44,10 +44,30 @@
                                     <a class="nav-link"
                                         href="#team">Team</a>
                                 </li>
-                                <li class="nav-item px-2">
-                                    <a class="nav-link"
-                                        href="#services">Services</a>
+
+                                <li class="nav-item px-2 dropdown">
+                                    <a class="nav-link dropdown-toggle"
+                                        href="#services"
+                                        id="navbarDropdownMenuLink"
+                                        role="button" data-toggle="dropdown"
+                                        aria-haspopup="true"
+                                        aria-expanded="false">
+                                        Services
+                                    </a>
+                                    <div class="dropdown-menu"
+                                        aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item"
+                                            href="pages/mechDesign.html">Mechanical
+                                            Design</a>
+                                        <a class="dropdown-item"
+                                            href="pages/elecDesign.html">Electrical
+                                            Design</a>
+                                        <a class="dropdown-item"
+                                            href="pages/softDesign.html">Software
+                                            Design</a>
+                                    </div>
                                 </li>
+
                                 <li class="nav-item px-2">
                                     <a class="nav-link"
                                         href="#gallery">Photos</a>
@@ -289,27 +309,25 @@
             <div class="container">
                 <div class="title text-center mb-5">
                     <h2 data-bigletter="G">Gallery</h2>
-                    <h4>Our Special Photos</h4>
+                    <h4>Our Special Moments</h4>
                 </div>
                 <div class="gallery-photos">
 
                     <picture class="pizza">
                         <img
-                            src="images/meal-1.jpg"
+                            src="images/team1.jpg"
                             alt="Hawaiian pizza with ham and pineapple" />
                         <div class="layer">
-                            <h2 class="meal-name">Pizza</h2>
-                            <p>Hawaiian pizza with ham and pineapple</p>
+                            <p>Team Members</p>
                         </div>
                     </picture>
 
                     <picture class="pizza-slices">
                         <img
-                            src="images/meal-4.jpg"
-                            alt="Levitation pizza on black background." />
+                            src="images/team2.jpg"
+                            alt="team members" />
                         <div class="layer">
-                            <h2 class="meal-name">Levitation pizza</h2>
-                            <p>Levitation pizza on black background.</p>
+                            <p>Some of Team Members</p>
                         </div>
                     </picture>
 
@@ -328,46 +346,39 @@
 
                     <picture class="omelette">
                         <img
-                            src="images/meal-7.jpg"
-                            alt="Frittata or potato pie in a ceramic plate on a light culinary background. Traditional Italian delicious homemade egg dish on the kitchen table. Top view" />
+                            src="images/team3.jpg"
+                            alt="Some of Team Members" />
                         <div class="layer">
-                            <h2 class="meal-name">Frittata</h2>
-                            <p>Frittata or potato pie in a ceramic plate</p>
+                            <p>Some of Team Members</p>
                         </div>
                     </picture>
 
                     <picture class="burger">
                         <img
-                            src="images/meal-3.jpg"
-                            alt="grass fed bison hamburger with chips & beer" />
+                            src="images/team4.jpg"
+                            alt="team Photo" />
                         <div class="layer">
-                            <h2 class="meal-name">Burger</h2>
-                            <p>grass fed bison hamburger with chips &
-                                beer</p>
+                            <p>Our Big Family</p>
                         </div>
                     </picture>
 
                     <picture class="fried">
-                        <img src="images/meal-5.jpg"
-                            alt="chicken legs" />
+                        <img src="images/team6.jpg"
+                            alt="electrical team with internal structure" />
                         <div class="layer">
-                            <h2 class="meal-name">Crispy Fried Chicken</h2>
                             <p>
-                                Golden brown chicken legs with a crunchy
-                                coating and juicy meat
+                                Some of The Electrical Team With Internal
+                                Structure
                             </p>
                         </div>
                     </picture>
 
                     <picture class="kofta">
-                        <img src="images/meal-6.jpg"
-                            alt="Lyulya kebab" />
+                        <img src="images/team5.jpg"
+                            alt="Team Photo" />
                         <div class="layer">
-                            <h2 class="meal-name">Lyulya kebab</h2>
                             <p>
-                                Tender and juicy skewers of ground lamb or
-                                beef, flavored with
-                                aromatic spices and herbs
+                                Team Photo
                             </p>
                         </div>
                     </picture>
@@ -475,7 +486,7 @@
             <div class="container p-5">
                 <div class="title text-center mb-5">
                     <h2 data-bigletter="C">Creative Team</h2>
-                    <h4>We are digital thinkers</h4>
+                    <h4>Our Creative Team</h4>
                 </div>
 
                 <div class="row row-cols-xl-4 row-cols-md-2 g-4">
@@ -762,108 +773,6 @@
                     </div>
                 </div>
 
-            </div>
-        </section>
-
-        <!--* ======= CAROUSEL ======= -->
-        <section class="customer">
-            <div class="carousel mb-5 mt-5" id="carousel">
-                <div class="container">
-                    <div id="carouselExampleCaptions" class="carousel slide"
-                        data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button"
-                                data-bs-target="#carouselExampleCaptions"
-                                data-bs-slide-to="0"
-                                class="active w-10px h-10px rounded-circle  bg-bluelight"
-                                aria-current="true"
-                                aria-label="Slide 1"></button>
-
-                            <button type="button"
-                                class="w-10px h-10px  rounded-circle bg-bluelight"
-                                data-bs-target="#carouselExampleCaptions"
-                                data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                        </div>
-
-                        <div class="carousel-inner text-center p-5">
-                            <div
-                                class="carousel-item active">
-                                <div
-                                    class="d-flex flex-column justify-content-center align-content-center">
-                                    <p class="mb-5 fw-light">HAPPY
-                                        CUSTOMERS</p>
-                                    <img src="/images/testimonial-1.jpg"
-                                        class="w-10 m-auto rounded-circle mb-3"
-                                        alt="testimonial-1">
-                                    <div class="fa-lightblue">
-                                        <h3 class="mb-2">Marissa Mayer</h3>
-                                        <h6
-                                            class="mb-3 fw-light text-gray-bold">CEO
-                                            Yahoo</h6>
-                                        <p
-                                            class="mb-5 fw-light text-gray-bold mx-auto w-50">Consectetur
-                                            adipisicing elit. Perspiciatis
-                                            aperiam quaerat iure veritatis
-                                            fugit
-                                            debitis, repellat aut
-                                            accusantium
-                                            culpa ipsum ex ipsa blanditiis
-                                            recusandae, sit similique, eius
-                                            assumenda porro pariatur.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="carousel-item ">
-                                <div
-                                    class="d-flex flex-column justify-content-center align-content-center">
-                                    <p class="mb-5 fw-light">HAPPY
-                                        CUSTOMERS</p>
-                                    <img src="/images/testimonial-2.jpg"
-                                        class="w-10 m-auto rounded-circle mb-3"
-                                        alt="testimonial-2">
-                                    <div class="fa-lightblue">
-                                        <h3 class="mb-2">Mark
-                                            Zucckerberg</h3>
-                                        <h6
-                                            class="mb-3 fw-light text-gray-bold">Founder
-                                            & CEO, Facebook</h6>
-                                        <p
-                                            class="mb-5 fw-light text-gray-bold mx-auto w-50">Consectetur
-                                            adipisicing elit. Perspiciatis
-                                            aperiam quaerat iure veritatis
-                                            fugit
-                                            debitis, repellat aut
-                                            accusantium
-                                            culpa ipsum ex ipsa blanditiis
-                                            recusandae, sit similique, eius
-                                            assumenda porro pariatur.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <button class="carousel-control-prev" type="button"
-                            data-bs-target="#carouselExampleCaptions"
-                            data-bs-slide="prev">
-                            <span
-                                class="carousel-control-prev-icon hover-transition"
-                                aria-hidden="true"><i
-                                    class="fa-solid fa-arrow-left"></i></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button"
-                            data-bs-target="#carouselExampleCaptions"
-                            data-bs-slide="next">
-                            <span
-                                class="carousel-control-next-icon hover-transition-next"
-                                aria-hidden="true"><i
-                                    class="fa-solid fa-arrow-right"></i></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
             </div>
         </section>
 

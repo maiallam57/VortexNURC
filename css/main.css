@@ -226,6 +226,17 @@ h3 {
     border-right: 1px solid #d2d0d0;
 }
 
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+.dropdown-menu {
+    margin-top: 0;
+}
+
+
 /* ====================================== */
 /* ===============> TITLE <==============*/
 .title h2 {
