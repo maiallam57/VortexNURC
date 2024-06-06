@@ -844,7 +844,7 @@ body:has(.team:target) li a[href="#team"] {
 
 /* ******************************************** */
 /* ===> LOCATION <=== */
-#location iframe{
+#location iframe {
     box-shadow: var(--box-shadow-all);
     border: var(--box-shadow-all);
 }
