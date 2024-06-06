@@ -6,6 +6,7 @@
 .light {
     --main-black: #1f1f1f;
     --box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    --box-shadow-all: 1 1px 1px 1 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
     --main-gray: #787878;
     --main-blue: #00c3da;
     --white: #fff;
@@ -823,14 +824,8 @@ body:has(.team:target) li a[href="#team"] {
 
 
 
-
-
-
-
-
-
-
-
+/* ******************************************** */
+/* ===> DESIGN <=== */
 .mech-design,
 .soft-design,
 .elec-design {
@@ -845,4 +840,11 @@ body:has(.team:target) li a[href="#team"] {
     figcaption {
         color: var(--main-gray);
     }
+}
+
+/* ******************************************** */
+/* ===> LOCATION <=== */
+#location iframe{
+    box-shadow: var(--box-shadow-all);
+    border: var(--box-shadow-all);
 }
