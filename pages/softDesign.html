@@ -144,33 +144,24 @@
                         <nav id="navbar-example3"
                             class="h-100 flex-column align-items-stretch pe-4 border-end">
                             <nav class="nav nav-pills flex-column">
-                                <a class="nav-link"
-                                    href="#electrical-system">Electrical
-                                    System</a>
-                                <a class="nav-link my-1"
-                                    href="#power-distribution">A. Power
-                                    Distribution and Calculations</a>
-                                <a class="nav-link my-1" href="#main-pcb">B.
-                                    Main PCB </a>
-                                <a class="nav-link my-1" href="#control-sys">C.
-                                    Control System</a>
-                                <nav class="nav nav-pills flex-column">
-                                    <a class="nav-link ms-3 my-1"
-                                        href="#thrust-control">1. Thruster’s
-                                        control and Thrust force.</a>
-                                    <a class="nav-link ms-3 my-1"
-                                        href="#dcv-control">2. DCV control</a>
-                                </nav>
-                                <a class="nav-link my-1" href="#tether">D.
-                                    Tether</a>
-                                <nav class="nav nav-pills flex-column">
-                                    <a class="nav-link ms-3 my-1"
-                                        href="#communication">1.
-                                        Communication</a>
-                                    <a class="nav-link ms-3 my-1"
-                                        href="#power">2. Power</a>
-                                </nav>
 
+                                <a class="nav-link my-1"
+                                    href="#vision-system">1. Vision
+                                    system</a>
+                                <a class="nav-link my-1" href="#tcu">
+                                    2. Topside Control Unit (TCU) </a>
+                                <a class="nav-link my-1" href="#control-sys">3.
+                                    Software and Control System
+                                </a>
+                                <nav class="nav nav-pills flex-column">
+                                    <a class="nav-link ms-3 my-1"
+                                        href="#underwater">a. Underwater
+                                        System
+                                    </a>
+                                    <a class="nav-link ms-3 my-1"
+                                        href="#topside">b. Topside Software
+                                    </a>
+                                </nav>
                             </nav>
                         </nav>
                     </div>
@@ -182,486 +173,317 @@
                             class="scrollspy-example-2"
                             tabindex="0">
 
-                            <div id="electrical-system" class="mb-5">
-                                <h4>ELECTRICAL SYSTEM</h4>
-                                <p>Using pluggable wire connections, the
-                                    underwater electrical system is designed to
-                                    be straightforward, dependable, and simple
-                                    to install. To minimize PCB size and
-                                    accommodate large components like the
-                                    Raspberry Pi, the electrical team
-                                    specifically designed and produced a
-                                    double-layer PCB</p>
-                            </div>
-
-                            <div id="power-distribution" class="mb-5">
-                                <h5>1. Power Distribution and Calculations</h5>
-                                <p>The power supply from the 12-VDC source is
-                                    directed through a 25 Ampere fuse located at
-                                    the surface-end of the tether before
-                                    reaching the onboard electrical system.
-                                    However, fluctuations in power caused by
-                                    voltage drop across the tether during
-                                    increased loads disrupt the functioning of
-                                    the cameras. To address this issue and
-                                    stabilize the voltage, a repurposed
-                                    buck-boost converter -fig (1) from Vortex
-                                    Academy was integrated into the system.
-                                    Notably, 12 volts are utilized to power
-                                    various components such as DCVs, LEDs, ESCs,
-                                    Arduino Nano, and cameras, while 5 volts
-                                    from the Buck Converter -fig (2) are
-                                    allocated to power the Raspberry Pi and
-                                    Pixhawk.</p>
-                                <p class="pb-5">Particular emphasis is placed on
-                                    propulsion
-                                    control due to its significant impact on
-                                    overall power consumption. To effectively
-                                    manage power consumption, thruster movement
-                                    is limited to one movement at a time, with
-                                    speed limited to1680 µs -fig(3) input to
-                                    the ESC. This required the development of a
-                                    software locking system to regulate the
-                                    current drawn by the thrusters. Basically,
-                                    the maximum power consumption is limited to
-                                    352.56 watts, with a peak current of
-                                    <strong>17.88 amps.</strong> Therefore,
-                                    although the required fuse is calculated to
-                                    be 23.244 amps based on a
-                                    safety factor of <strong>1.3, a
-                                        25amp</strong>fuse is still
-                                    used as a precaution. Detailed power
-                                    distribution is provided in Table 3.</p>
-
-                                <div class="d-flex text-center pb-5">
+                            <div id="vision-system" class="mb-5">
+                                <h4>1. Vision system </h4>
+                                <p>Our system is meticulously crafted to
+                                    optimize the pilot's field of view,
+                                    acknowledging the diverse demands of
+                                    different missions involving Kratos -fig
+                                    (1). It incorporates four carefully
+                                    selected purchased CCTV cameras
+                                    and one Blue Robotics camera, each
+                                    fulfilling a specific role. The first
+                                    camera, angled at 60°, offers a gripper view
+                                    crucial for various missions.
+                                    The second camera, positioned at a 90°
+                                    angle, supervises the upper
+                                    equipment retrieval box. The third camera is
+                                    dedicated to capturing the
+                                    bottom side of the pool, ensuring convenient
+                                    viewing of tether. The fourth
+                                    camera offers a backward-facing view to
+                                    monitor the tether and avoid
+                                    entanglement with the propellers. Lastly,
+                                    the primary Blue Robotics camera
+                                    is forward-facing, providing the pilot's
+                                    perspective and primarily deployed
+                                    in tasks such as Autonomous Transplanting
+                                    and 3D modeling.</p>
+                                <div
+                                    class="d-flex justify-content-center text-center pb-5">
                                     <figure class="figure">
                                         <img
-                                            src="../images/buck and buck boost.PNG"
+                                            src="../images/visionSystem.PNG"
                                             class="figure-img img-fluid rounded text-center"
-                                            alt="buck-boost & Buck
-                                            converter">
+                                            alt="vision System">
                                         <figcaption
                                             class="figure-caption">Figure 1:
-                                            buck-boost & Buck
-                                            converter</figcaption>
+                                            Camera Cones by
+                                            SolidWorks</figcaption>
                                     </figure>
-                                    <figure class="figure">
-                                        <img
-                                            src="../images/pwm.png"
-                                            class="figure-img img-fluid rounded text-center"
-                                            alt="Thruster Power Curve">
-                                        <figcaption
-                                            class="figure-caption">Figure 2:
-                                            Thruster Power Curve by Blue
-                                            Robotics</figcaption>
-                                    </figure>
+
                                 </div>
-
-                                <div class="table-responsive my-3">
-
-                                    <table
-                                        class="table table-bordered table-hover">
-                                        <thead class="thead-dark">
-                                            <tr>
-                                                <th>Component</th>
-                                                <th>Voltage (Volts)</th>
-                                                <th>Max current (Amperes)</th>
-                                                <th>Max power (Watts)</th>
-                                                <th>Quantity</th>
-                                                <th>Total Max power (Watts)</th>
-                                                <th>Total max current
-                                                    (Amperes)</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>T200</td>
-                                                <td>12</td>
-                                                <td>2.5</td>
-                                                <td>30</td>
-                                                <td>6</td>
-                                                <td>180</td>
-                                                <td>15</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Bilge pump</td>
-                                                <td>12</td>
-                                                <td>10</td>
-                                                <td>120</td>
-                                                <td>1</td>
-                                                <td>120</td>
-                                                <td>10</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Raspberry pi 4</td>
-                                                <td>5</td>
-                                                <td>3</td>
-                                                <td>15</td>
-                                                <td>1</td>
-                                                <td>15</td>
-                                                <td>3</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Pixhawk</td>
-                                                <td>5</td>
-                                                <td>3</td>
-                                                <td>15</td>
-                                                <td>1</td>
-                                                <td>15</td>
-                                                <td>3</td>
-                                            </tr>
-                                            <tr>
-                                                <td>CCTV Cameras</td>
-                                                <td>12</td>
-                                                <td>0.275</td>
-                                                <td>3.3</td>
-                                                <td>4</td>
-                                                <td>13.2</td>
-                                                <td>1.1</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Low Light Camera</td>
-                                                <td>12</td>
-                                                <td>0.22</td>
-                                                <td>2.64</td>
-                                                <td>1</td>
-                                                <td>2.64</td>
-                                                <td>0.22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>DCV</td>
-                                                <td>12</td>
-                                                <td>0.28</td>
-                                                <td>3.36</td>
-                                                <td>2</td>
-                                                <td>6.72</td>
-                                                <td>0.56</td>
-                                            </tr>
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th colspan="5"
-                                                    class="text-right">Total
-                                                    Power</th>
-                                                <th>352.56 Watts</th>
-                                                <th></th>
-                                            </tr>
-                                            <tr>
-                                                <th colspan="5"
-                                                    class="text-right">Maximum
-                                                    Power Consumption</th>
-                                                <th>232.56 Watts</th>
-                                                <th></th>
-                                            </tr>
-                                            <tr>
-                                                <th colspan="5"
-                                                    class="text-right">Actual
-                                                    Current Calculations</th>
-                                                <th>17.88 Amperes</th>
-                                                <th></th>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
-                                </div>
-
-                                <h5> Fuse Calculation:
-                                </h5>
-                                <p>
-                                    ROV Overcurrent Protection= ROV Full Load
-                                    Current * 130%
-                                    <br />Fuse Rating = [ (Blue Robotics
-                                    Thrusters) +
-                                    other system] *130%
-                                    <br />Fuse Rating (horizontal thrusters) =
-                                    [(4*2.5
-                                    Amps) +(7.88 Amps)] * 130%= 23.244 Amps
-                                    <br />Fuse Rating (vertical thrusters) =
-                                    [(2*2.5
-                                    Amps) +(7.88 Amps)] * 130%= 16.744 Amps
-                                    <br />Maximum Fuse Rating = 25 Amps
-                                    <br />The implementation of the software
-                                    interlocking system, which imposes
-                                    individual speed limits for each thruster,
-                                    ensures that maximum power consumption is
-                                    never attained. Moreover, this mechanism
-                                    prevents all six thrusters from operating
-                                    simultaneously at maximum speed. As a
-                                    result, the actual maximum current draw is
-                                    17.88 amps.
-
-                                </p>
                             </div>
 
-                            <div id="main-pcb" class="mb-5">
-                                <h4>Main PCB</h4>
-                                <div class="row">
-                                    <div class="col-8">
-                                        <p>Last year, the electrical team
-                                            embarked
-                                            on
-                                            developing a double-layer PCB -fig
-                                            (24)
-                                            to
-                                            optimize space utilization in the
-                                            bottom
-                                            side electrical system of our ROV.
-                                            Our
-                                            primary goal was to accommodate all
-                                            essential components while
-                                            maintaining
-                                            operational efficiency. Central to
-                                            this
-                                            Endeavor was the integration of
-                                            protective
-                                            measures, including a fuse, aimed at
-                                            safeguarding the PCB from
-                                            overcurrent
-                                            during
-                                            system operation. This meticulously
-                                            designed
-                                            board seamlessly incorporates vital
-                                            elements
-                                            such as the Arduino, ESCs, and
-                                            IRF540
-                                            MOSFETS, ensuring robust signal
-                                            connections
-                                            and efficient power delivery.
-                                        </p>
-                                    </div>
-                                    <div
-                                        class="col-4 d-flex justify-content-center text-center">
-                                        <figure class="figure">
-                                            <img
-                                                src="../images/Previous PCB.png"
-                                                class="figure-img img-fluid rounded text-center"
-                                                alt="Previous PCB">
-                                            <figcaption
-                                                class="figure-caption">Figure
-                                                4:Previous PCB</figcaption>
-                                        </figure>
-                                    </div>
-                                </div>
-                                <p>
-                                    To enhances our design and
-                                    accommodate
-                                    potential system enhancements or
-                                    upgrades,
-                                    we recently integrated a Raspberry
-                                    Pi 4
-                                    and
-                                    a Pixhawk into the PCB. This
-                                    addition
-                                    aims
-                                    to expand the capabilities of our
-                                    ROV,
-                                    improving its computational prowess
-                                    and
-                                    autonomy. Before finalizing the
-                                    Gerber
-                                    Files
-                                    for production, we conducted
-                                    comprehensive
-                                    testing of our updated design using
-                                    a
-                                    prototype PCB. This rigorous testing
-                                    phase
-                                    was essential to validate the
-                                    seamless
-                                    functionality and compatibility of
-                                    the
-                                    PCB
-                                    with the newly integrated
-                                    components.
+                            <div id="tcu" class="mb-5">
+                                <h4>2. Topside Control Unit (TCU)</h4>
+                                <p>The control panel of Kratos -fig (2),
+                                    various components including four
+                                    video baluns, a DVR, and the main power
+                                    outlet are accommodated. The
+                                    DVR was repurposed to establish a connection
+                                    with the surface laptop via a
+                                    local network using RJ45. All elements are
+                                    securely mounted, with distinct
+                                    separation and labeling of AC and DC power
+                                    supplies to prevent confusion.
+                                    Cable management is meticulously handled,
+                                    ensuring no exposed wires and
+                                    proper strain relief for incoming cables.
+                                </p>
+                                <p class="pb-5">Furthermore, the decision to
+                                    purchase the joystick was made judiciously
+                                    to
+                                    minimize overall costs, with prior
+                                    confirmation of its compatibility with
+                                    QGround Control for transmitting signals to
+                                    the ROV.
                                 </p>
 
-                                <p>Furthermore, we implemented a
-                                    circular
-                                    design
-                                    for the PCB -fig (26), and
-                                    strategically
-                                    positioned the components across the
-                                    two
-                                    layers to optimize space utilization
-                                    within
-                                    the enclosure. This innovative
-                                    approach
-                                    not
-                                    only minimizes spatial constraints
-                                    but
-                                    also
-                                    enhances the overall compactness and
-                                    efficiency of the electrical system
-                                    within
-                                    the ROV.</p>
-
                                 <div
-                                    class="d-flex justify-content-center text-center">
-                                    <figure class="figure">
-                                        <img src="../images/pcb2.png"
-                                            class="figure-img img-fluid rounded text-center"
-                                            alt="front PCB">
-                                        <figcaption
-                                            class="figure-caption">Figure
-                                            4:
-                                            Front Face of
-                                            PCB</figcaption>
-                                    </figure>
+                                    class="d-flex justify-content-center text-center pb-5">
                                     <figure class="figure">
                                         <img
-                                            src="../images/pcb1.jpg"
+                                            src="../images/tcu.PNG"
                                             class="figure-img img-fluid rounded text-center"
-                                            alt="back PCB">
+                                            alt="tcu">
                                         <figcaption
-                                            class="figure-caption">Figure
-                                            5:
-                                            Back Face of
-                                            PCB</figcaption>
+                                            class="figure-caption">Figure 2:
+                                            TCU</figcaption>
                                     </figure>
-                                </div>
 
+                                </div>
                             </div>
 
                             <div id="control-sys" class="mb-5">
-                                <h4 class="mb-3">Control System</h4>
-                                <h5 class="text-gray-bold"
-                                    id="thrust-control">1. Thruster’s control
-                                    and Thrust force.</h5>
-                                <div class="row">
-                                    <div class="col-8">
-                                        <p>The control of the six T200 thrusters
-                                            is facilitated by six electronic
-                                            speed controllers (ESCs) -fig (27).
-                                            In this configuration, the Pixhawk
-                                            sends pulse width modulation (PWM)
-                                            signals to regulate both the speed
-                                            and direction of the thrusters. To
-                                            simplify the internal wiring layout,
-                                            the ESCs were incorporated onto the
-                                            PCB, enabling them to receive both
-                                            signal and power directly from the
-                                            board.
-                                        </p>
-                                    </div>
-                                    <div
-                                        class="col-4 d-flex justify-content-center text-center">
-                                        <figure class="figure">
-                                            <img
-                                                src="../images/esc.png"
-                                                class="figure-img img-fluid rounded text-center"
-                                                alt="ESCs">
-                                            <figcaption
-                                                class="figure-caption">Figure
-                                                4: ESCs</figcaption>
-                                        </figure>
-                                    </div>
-                                </div>
+                                <h4>3. Software and Control System
+                                </h4>
+                                <p class="pb-3">Kratos software serves two
+                                    primary functions:
+                                    managing input from the joystick and
+                                    commanding and
+                                    directing the ROV using QGround Control and
+                                    the vision system. Our software is divided
+                                    into two major
+                                    subsystems: the underwater system and the
+                                    topside system.</p>
 
-                                <h5 id="dcv-control" class="text-gray-bold">2.
-                                    DCV control:
+                                <h5 id="underwater">a. Underwater System
                                 </h5>
+                                <p>Previously, Kratos' Underwater System,
+                                    controlled by an Arduino-based architecture
+                                    utilizing finite state
+                                    machines, directed the ROV into specific
+                                    axes based on received commands.
+                                    The system has since undergone an upgrade to
+                                    enhance reliability and versatility. The new
+                                    configuration
+                                    incorporates advanced components like the
+                                    Pixhawk and Raspberry Pi 4, replacing the
+                                    Arduino. This upgrade
+                                    enables the implementation of innovative
+                                    methodologies, including the utilization of
+                                    probiotics for coral
+                                    health restoration and the conservation of
+                                    Lake Sturgeon populations.</p>
 
-                                <p> We utilize IRF540 MOSFETs to control
-                                    the two
-                                    5/2 DCV, managing the high power of
-                                    the
-                                    loads. These MOSFETs receive signals
-                                    from
-                                    the pixhawk Auxiliary pins. To
-                                    prevent
-                                    overheating, the temperature of the
-                                    MOSFETs
-                                    -fig (27), was closely monitored and
-                                    discounted. both 5/2 DCVs are reused
-                                    to
-                                    regulate the airflow to the
-                                    pneumatic
-                                    cylinder connected to the clutch and
-                                    the
-                                    other one for our rotational gripper
-                                </p>
-                                <div class="row">
-                                    <div class="col-8">
-                                        <p>
-                                            <strong>IRF640 MOSFET temperature
-                                                calculations:</strong>
-                                            <br />ID = 0.28 A
-                                            <br /> RDS (on) = 0.18 ohm
-                                            <br />Pdissipated = RDS (on) x ID 2
-                                            =
-                                            0.014
-                                            Watt
-                                            <br />Rth j-a = 62 °C/Watt
-                                            <br />∆T = Tth j-a x Pdissipated
-                                            =0.87
-                                            °C
-                                        </p>
-                                    </div>
+                                <div class="pixhawk">
+                                    <h6>1. Pixhawk</h6>
+                                    <p>The Pixhawk 1 -Fig (3), serves as Kratos’
+                                        flight controller, having been procured
+                                        to
+                                        ensure stability for the ROV. Its
+                                        primary
+                                        pins are dedicated to controlling the
+                                        ESCs
+                                        and driving the thrusters, while
+                                        auxiliary
+                                        pins manage grippers and LEDs.
+                                        Pixhawk 1 is essential for controlling
+                                        Kratos' movement, ensuring
+                                        stabilization,
+                                        and
+                                        supporting autonomous functionality by
+                                        utilizing sensors to determine the ROV’s
+                                        state. Equipped with numerous built-in
+                                        sensors, including a gyroscope,
+                                        accelerometer,
+                                        and magnetometer, the Pixhawk enables
+                                        the
+                                        configuration of additional sensors such
+                                        as the bar30, which we utilized instead
+                                        of
+                                        the built-in barometer. These sensors
+                                        facilitate stabilization modes like
+                                        altitude
+                                        hold and stabilize flight modes
+                                        supported by
+                                        the Pixhawk. These flight modes have
+                                        proven
+                                        instrumental in Kratos' successful
+                                        execution of various tasks. </p>
+                                    <p>The selection of Pixhawk 1 over Pixhawk 4
+                                        was
+                                        influenced by its compatibility with
+                                        essential pressure sensors like the
+                                        bar30,
+                                        crucial for Kratos' depth control,
+                                        especially during flight modes
+                                        requiring precise altitude management.
+                                        Pixhawk was chosen over Arduino because
+                                        of
+                                        its compatibility
+                                        limitations with sensors and the
+                                        challenge
+                                        of replicating Pixhawk's internal PID
+                                        controller's efficiency.
+                                        Additionally, the STM32 chip embedded in
+                                        Pixhawk enables superior thruster
+                                        control,
+                                        compared to Arduino’s
+                                        ATmega328P chip, due to its advanced
+                                        computational capabilities and extensive
+                                        peripheral support. </p>
+
                                     <div
-                                        class="col-4 d-flex justify-content-center text-center">
+                                        class="d-flex justify-content-center text-center">
                                         <figure class="figure">
-                                            <img
-                                                src="../images/MOSFET Circuit.png"
+                                            <img src="../images/pix.PNG"
                                                 class="figure-img img-fluid rounded text-center"
-                                                alt="MOSFET Circuit">
+                                                alt="pixhawk">
                                             <figcaption
                                                 class="figure-caption">Figure
-                                                4: MOSFET Circuit</figcaption>
+                                                3: Pixhawk1</figcaption>
                                         </figure>
                                     </div>
-                                </div>
-                            </div>
 
-                            <div id="tether" class="mb-5">
-                                <h4>Tether</h4>
-                                <h5 id="communication ">Communication </h5>
-                                <div class="row">
-                                    <div class="col-8">
-                                        <p>Data transmission from the station to
-                                            the ROV is facilitated by two
-                                            Category 6 (CAT6) Ethernet cables,
-                                            each comprising four twisted-pair
-                                            cables -fig (28). One of these
-                                            cables links the RJ45 port to the
-                                            Raspberry Pi-RJ45 and is responsible
-                                            for carrying communication signals.
-                                            Meanwhile, the other cable connects
-                                            to the remaining four. Our choice of
-                                            CAT6 cables is based on their serial
-                                            transmission rate of 250 kbps
-                                            (kilobits per second)</p>
-                                    </div>
+                                </div>
+
+                                <div class="raspberrypi">
+                                    <h6>1. Raspberry pi</h6>
+                                    <p>Our system utilizes BlueOS as the
+                                        companion operating system deployed on
+                                        Raspberry Pi 4 -fig (4) to seamlessly
+                                        integrate with Pixhawk for operating an
+                                        ROV.
+                                        Making it better suited for handling the
+                                        complex tasks required for ROV
+                                        operation.
+                                        With its superior computational
+                                        capabilities, Raspberry Pi can
+                                        effectively manage
+                                        communication with Pixhawk, enabling
+                                        precise control and navigation of the
+                                        ROV.
+                                        Additionally, Raspberry Pi offers a
+                                        wider range of connectivity options,
+                                        including
+                                        long-distance communication via RJ45,
+                                        enhancing the overall functionality and
+                                        flexibility of our system. </p>
+                                    <p>Furthermore, Raspberry Pi handles the
+                                        main camera stream enabling seamless
+                                        transmission to the topside.
+                                        With the camera directly connected to
+                                        it, this setup ensures efficient
+                                        management of the main camera stream
+                                        and real-time video feed to the topside,
+                                        enhancing control during ROV operations.
+                                        Thus, Raspberry Pi proves
+                                        to be the optimal choice for
+                                        implementing BlueOS and ensuring
+                                        seamless integration with Pixhawk in our
+                                        ROV operations.</p>
+
                                     <div
-                                        class="col-4 d-flex justify-content-center text-center">
+                                        class="d-flex justify-content-center text-center">
                                         <figure class="figure">
                                             <img
-                                                src="../images/Tether Diagram.png"
+                                                src="../images/Raspberry-Pi-4-Model-B.jpg"
                                                 class="figure-img img-fluid rounded text-center"
-                                                alt="Tether Diagram">
+                                                alt="Raspberry-Pi-4">
                                             <figcaption
                                                 class="figure-caption">Figure
-                                                4: Tether Diagram</figcaption>
+                                                4: Raspberry pi 4 model
+                                                B</figcaption>
                                         </figure>
                                     </div>
+
                                 </div>
 
-                                <h5 id="power">Power </h5>
-                                <p>Utilizing the AWG wire sizing chart, we
-                                    selected a 6 AWG (4 mm) power cable to
-                                    mitigate voltage drop across the tether ends
-                                    and ensure a stable voltage supply to the
-                                    system. Given our current limit of 23.244
-                                    amps, our wire selection was determined
-                                    through the following calculations:</p>
+                                <h5 id="topside">a. Topside Software
+                                </h5>
+                                <p>Our topside software comprises two distinct
+                                    modules, each serving a specific function to
+                                    optimize user
+                                    experience and enhance operational
+                                    efficiency:</p>
 
-                                <p>Max power Consumption = 232.56watts
-                                    <br /> Max Current = 17.88 Ampere
-                                    <br /> Fuse Calculations:
-                                    <br /> 17.88 X 1.3 = 23.244Ampere
-                                    <br /> Fuse used = 25 Ampere
-                                </p>
+                                <div class="control-unit">
+                                    <h6>1. Control Unit</h6>
+                                    <p>The Control Unit is housed within a pilot
+                                        laptop and is responsible for operating
+                                        the ROV using QGround
+                                        Control. By connecting via RJ45 to the
+                                        laptop, QGround Control can directly
+                                        access the saved configuration
+                                        of the joystick, enabling precise
+                                        control of the ROV's movements.
+                                        Additionally, the camera connected to
+                                        the
+                                        Raspberry Pi appears on QGround Control,
+                                        providing real-time visual feedback to
+                                        the pilot facilitating smooth
+                                        operation during missions. </p>
+
+                                </div>
+
+                                <div class="GUI">
+                                    <h6>2. Graphical User Interface (GUI) </h6>
+                                    <p>The GUI -fig (5) hosts a pilot interface
+                                        while GUI -fig (6) hosts copilot
+                                        interface Furthermore, the copilot GUI
+                                        utilizes camera streams to generate 3D
+                                        models, enhancing situational awareness
+                                        and supporting mission planning and
+                                        execution. Powered by the Matplotlib
+                                        Python library for plotting and
+                                        developed
+                                        using PyQt5 and QtDesigner, the GUI
+                                        complements the Control Unit by
+                                        providing comprehensive visualization
+                                        and monitoring functionalities
+                                        throughout ROV operations. </p>
+
+                                    <div
+                                        class="d-flex text-center">
+                                        <figure class="figure">
+                                            <img
+                                                src="../images/QGROUND.jpg"
+                                                class="figure-img img-fluid rounded text-center"
+                                                alt="QGROUND GUI">
+                                            <figcaption
+                                                class="figure-caption">Figure
+                                                5: Pilot GUI
+                                            </figcaption>
+                                        </figure>
+
+                                        <figure class="figure">
+                                            <img
+                                                src="../images/GUI.jpg"
+                                                class="figure-img img-fluid rounded text-center"
+                                                alt="Copilot GUI">
+                                            <figcaption
+                                                class="figure-caption">Figure
+                                                6: Copilot GUI
+                                            </figcaption>
+                                        </figure>
+
+                                    </div>
+
+                                </div>
 
                             </div>
-
                         </div>
                     </div>
                 </div>

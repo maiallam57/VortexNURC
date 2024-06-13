@@ -208,6 +208,11 @@ html {
 
 }
 
+h5,
+h6 {
+    color: var(--main-gray);
+}
+
 .title h6,
 h3 {
     color: var(--black) !important;
@@ -499,6 +504,7 @@ body:has(.team:target) li a[href="#team"] {
 .gallery-photos picture:hover .layer {
     top: 0;
 }
+
 
 
 /* ====================================== */

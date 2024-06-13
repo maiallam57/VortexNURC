@@ -82,31 +82,31 @@
         width: calc(calc(100% - var(--gap)) / 2);
     }
 
-    .gallery .pizza {
+    .gallery .team {
         order: 1;
     }
 
-    .gallery .fried {
+    .gallery .photo2 {
         order: 6;
     }
 
-    .gallery .omelette {
+    .gallery .team3 {
         order: 4;
     }
 
-    .gallery .kofta {
+    .gallery .photo3 {
         order: 7;
     }
 
-    .gallery .burger {
+    .gallery .photo1 {
         order: 2;
     }
 
-    .gallery .pizza-slices {
+    .gallery .team2 {
         order: 3;
     }
 
-    .gallery .steak {
+    .gallery .rov {
         order: 5;
     }
 }
