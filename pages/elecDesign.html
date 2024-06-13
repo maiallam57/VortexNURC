@@ -10,124 +10,127 @@
         <title>Vortex</title>
     </head>
     <body id="body" class="light">
+        
+  <!--* ======= NAVBAR ======= -->
+  <div class="home" id="home">
+    <nav id="nav"
+        class="navbar navbar-expand-lg  navbar-dark z-3 fixed-top border-bottom border-gray">
+        <div class="container">
+            <div class="container px-5 d-flex justify-content-between">
+                <a id="logo" class="navbar-brand logo-light"
+                    href="../index.html"></a>
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <!--* ======= NAVBAR ======= -->
-        <div class="home" id="home">
-            <nav id="nav"
-                class="navbar navbar-expand-lg  navbar-dark z-3 fixed-top border-bottom border-gray">
-                <div class="container">
-                    <div class="container px-5 d-flex justify-content-between">
-                        <a id="logo" class="navbar-brand logo-light"
-                            href="#home"></a>
-                        <button class="navbar-toggler" type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#navbarNavDropdown"
-                            aria-controls="navbarNavDropdown"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+                <div class="collapse navbar-collapse flex-grow-0"
+                    id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link px-3"
+                                aria-current="page"
+                                href="../index.html#home">Home</a>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a class="nav-link"
+                                href="../index.html#about">About</a>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a class="nav-link"
+                                href="../index.html#team">Team</a>
+                        </li>
 
-                        <div class="collapse navbar-collapse flex-grow-0"
-                            id="navbarNavDropdown">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link px-3"
-                                        aria-current="page"
-                                        href="../index.html">Home</a>
-                                </li>
-                                <li class="nav-item px-2">
-                                    <a class="nav-link" href="#about">About</a>
-                                </li>
-                                <li class="nav-item px-2">
-                                    <a class="nav-link"
-                                        href="../index.html#team">Team</a>
-                                </li>
-                                <li class="nav-item px-2 dropdown">
-                                    <a class="nav-link dropdown-toggle"
-                                        href="../index.html#services"
-                                        id="navbarDropdownMenuLink"
-                                        role="button" data-toggle="dropdown"
-                                        aria-haspopup="true"
-                                        aria-expanded="false">
-                                        Services
-                                    </a>
-                                    <div class="dropdown-menu"
-                                        aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item"
-                                            href="mechDesign.html">Mechanical
-                                            Design</a>
-                                        <a class="dropdown-item"
-                                            href="elecDesign.html">Electrical
-                                            Design</a>
-                                        <a class="dropdown-item"
-                                            href="softDesign.html">Software
-                                            Design</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item px-2">
-                                    <a class="nav-link"
-                                        href="../index.html#gallery">Photos</a>
-                                </li>
-                                <li class="nav-item px-2">
-                                    <a class="nav-link"
-                                        href="../index.htmlhttps://www.nurc.us/"
-                                        target="_blank">NURC</a>
-                                </li>
-                                <li class="nav-item px-2">
-                                    <a class="nav-link"
-                                        href="../index.html#location">Location</a>
-                                </li>
-                            </ul>
-
-                            <div
-                                class="links h-100 align-content-center ps-3 border-start border-gray">
-                                <ul class="navbar-nav">
-                                    <li class="nav-item px-1">
-                                        <a class="nav-link"
-                                            href="http//www.facebook.com"
-                                            target="_blank"><i
-                                                class="fa-brands fa-facebook-f"></i></a>
-                                    </li>
-                                    <li class="nav-item px-1">
-                                        <a class="nav-link"
-                                            href="http//www.twitter.com"
-                                            target="_blank"><i
-                                                class="fa-brands fa-twitter"></i></a>
-                                    </li>
-                                    <li class="nav-item px-1">
-                                        <a class="nav-link"
-                                            href="http//www.instagram.com"
-                                            target="_blank"><i
-                                                class="fa-brands fa-instagram"></i></a>
-                                    </li>
-
-                                    <li class="nav-item px-1">
-                                        <button for="mode"
-                                            class="dark no-border nav-link"
-                                            onclick="darkMode()"
-                                            id="darkIcon"> <i
-                                                class="fa-solid fa-moon"></i>
-                                        </button>
-                                    </li>
-
-                                    <li class="nav-item px-1">
-                                        <button for="mode"
-                                            class="light d-none no-border nav-link"
-                                            onclick="lightMode()"
-                                            id="lightIcon"><i
-                                                class="fa-regular fa-sun"></i>
-                                        </button>
-                                    </li>
-
-                                </ul>
+                        <li class="nav-item px-2 dropdown">
+                            <a class="nav-link dropdown-toggle"
+                                href="../index.html#services"
+                                id="navbarDropdownMenuLink"
+                                role="button" data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                                Services
+                            </a>
+                            <div class="dropdown-menu"
+                                aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item"
+                                    href="../pages/mechDesign.html">Mechanical
+                                    Design</a>
+                                <a class="dropdown-item"
+                                    href="../pages/elecDesign.html">Electrical
+                                    Design</a>
+                                <a class="dropdown-item"
+                                    href="../pages/softDesign.html">Software
+                                    Design</a>
                             </div>
+                        </li>
 
-                        </div>
+                        <li class="nav-item px-2">
+                            <a class="nav-link"
+                                href="../index.html#gallery">Photos</a>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a class="nav-link"
+                                href="https://www.nurc.us/"
+                                target="_blank">NURC</a>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a class="nav-link"
+                                href="../index.html#location">Location</a>
+                        </li>
+                    </ul>
+
+                    <div
+                        class="links h-100 align-content-center ps-3 border-start border-gray">
+                        <ul class="navbar-nav">
+                            <li class="nav-item px-1">
+                                <a class="nav-link"
+                                    href="https://www.facebook.com/vortexroboticsegypt"
+                                    target="_blank"><i
+                                        class="fa-brands fa-facebook-f"></i></a>
+                            </li>
+                            <li class="nav-item px-1">
+                                <a class="nav-link"
+                                    href="https://www.linkedin.com/company/vortexrobotics/mycompany/verification/"
+                                    target="_blank"><i
+                                        class="fa-brands fa-linkedin"></i></a>
+                            </li>
+                            <li class="nav-item px-1">
+                                <a class="nav-link"
+                                    href="https://www.instagram.com/vortex_robotics/"
+                                    target="_blank"><i
+                                        class="fa-brands fa-instagram"></i></a>
+                            </li>
+
+                            <li class="nav-item px-1">
+                                <button for="mode"
+                                    class="dark no-border nav-link"
+                                    onclick="darkMode()"
+                                    id="darkIcon"> <i
+                                        class="fa-solid fa-moon"></i>
+                                </button>
+                            </li>
+
+                            <li class="nav-item px-1">
+                                <button for="mode"
+                                    class="light d-none no-border nav-link"
+                                    onclick="lightMode()"
+                                    id="lightIcon"><i
+                                        class="fa-regular fa-sun"></i>
+                                </button>
+                            </li>
+
+                        </ul>
                     </div>
+
                 </div>
-            </nav>
+            </div>
         </div>
+    </nav>
+</div>
 
         <div class="container py-5 my-5">
             <div class="title text-center my-5">
